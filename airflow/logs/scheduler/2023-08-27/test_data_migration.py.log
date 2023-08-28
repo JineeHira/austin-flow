@@ -1,0 +1,192 @@
+[2023-08-27T00:00:59.938+0000] {processor.py:157} INFO - Started process (PID=4480) to work on /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:00:59.940+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_data_migration.py for tasks to queue
+[2023-08-27T00:00:59.942+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:00:59.942+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:00:59.982+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:00:59.979+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/test_data_migration.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/test_data_migration.py", line 6, in <module>
+    from model import Connection
+  File "/opt/airflow/dags/model.py", line 5, in <module>
+    from geoalchemy2 import Geometry
+ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-27T00:00:59.984+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:01:00.000+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_data_migration.py took 0.065 seconds
+[2023-08-27T00:07:41.963+0000] {processor.py:157} INFO - Started process (PID=4498) to work on /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:07:41.970+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_data_migration.py for tasks to queue
+[2023-08-27T00:07:41.972+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:07:41.972+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:07:42.040+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:07:42.036+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/test_data_migration.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/test_data_migration.py", line 6, in <module>
+    from model import Connection
+  File "/opt/airflow/dags/model.py", line 5, in <module>
+    from geoalchemy2 import Geometry
+ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-27T00:07:42.041+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:07:42.072+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_data_migration.py took 0.111 seconds
+[2023-08-27T00:14:53.090+0000] {processor.py:157} INFO - Started process (PID=4514) to work on /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:14:53.092+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_data_migration.py for tasks to queue
+[2023-08-27T00:14:53.094+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:14:53.093+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:14:53.164+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:14:53.162+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/test_data_migration.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/test_data_migration.py", line 6, in <module>
+    from model import Connection
+  File "/opt/airflow/dags/model.py", line 5, in <module>
+    from geoalchemy2 import Geometry
+ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-27T00:14:53.166+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:14:53.191+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_data_migration.py took 0.104 seconds
+[2023-08-27T00:23:31.865+0000] {processor.py:157} INFO - Started process (PID=4530) to work on /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:23:31.868+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_data_migration.py for tasks to queue
+[2023-08-27T00:23:31.869+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:23:31.869+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:23:31.972+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:23:31.968+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/test_data_migration.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/test_data_migration.py", line 6, in <module>
+    from model import Connection
+  File "/opt/airflow/dags/model.py", line 5, in <module>
+    from geoalchemy2 import Geometry
+ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-27T00:23:31.974+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:23:32.003+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_data_migration.py took 0.143 seconds
+[2023-08-27T00:31:42.026+0000] {processor.py:157} INFO - Started process (PID=4547) to work on /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:31:42.028+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_data_migration.py for tasks to queue
+[2023-08-27T00:31:42.029+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:31:42.029+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:31:42.075+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:31:42.072+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/test_data_migration.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/test_data_migration.py", line 6, in <module>
+    from model import Connection
+  File "/opt/airflow/dags/model.py", line 5, in <module>
+    from geoalchemy2 import Geometry
+ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-27T00:31:42.076+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:31:42.093+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_data_migration.py took 0.071 seconds
+[2023-08-27T00:39:08.626+0000] {processor.py:157} INFO - Started process (PID=4563) to work on /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:39:08.637+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_data_migration.py for tasks to queue
+[2023-08-27T00:39:08.639+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:39:08.638+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:39:08.719+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:39:08.713+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/test_data_migration.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/test_data_migration.py", line 6, in <module>
+    from model import Connection
+  File "/opt/airflow/dags/model.py", line 5, in <module>
+    from geoalchemy2 import Geometry
+ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-27T00:39:08.721+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:39:08.747+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_data_migration.py took 0.126 seconds
+[2023-08-27T00:45:58.831+0000] {processor.py:157} INFO - Started process (PID=4579) to work on /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:45:58.833+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_data_migration.py for tasks to queue
+[2023-08-27T00:45:58.836+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:45:58.835+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:45:58.880+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:45:58.876+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/test_data_migration.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/test_data_migration.py", line 6, in <module>
+    from model import Connection
+  File "/opt/airflow/dags/model.py", line 5, in <module>
+    from geoalchemy2 import Geometry
+ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-27T00:45:58.881+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:45:58.911+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_data_migration.py took 0.086 seconds
+[2023-08-27T00:51:08.452+0000] {processor.py:157} INFO - Started process (PID=4595) to work on /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:51:08.454+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_data_migration.py for tasks to queue
+[2023-08-27T00:51:08.455+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:51:08.455+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:51:08.549+0000] {logging_mixin.py:151} INFO - [2023-08-27T00:51:08.545+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/test_data_migration.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/test_data_migration.py", line 6, in <module>
+    from model import Connection
+  File "/opt/airflow/dags/model.py", line 5, in <module>
+    from geoalchemy2 import Geometry
+ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-27T00:51:08.551+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T00:51:08.576+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_data_migration.py took 0.128 seconds
+[2023-08-27T01:12:44.248+0000] {processor.py:157} INFO - Started process (PID=4613) to work on /opt/airflow/dags/test_data_migration.py
+[2023-08-27T01:12:44.251+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_data_migration.py for tasks to queue
+[2023-08-27T01:12:44.256+0000] {logging_mixin.py:151} INFO - [2023-08-27T01:12:44.254+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T01:12:44.334+0000] {logging_mixin.py:151} INFO - [2023-08-27T01:12:44.327+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/test_data_migration.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/test_data_migration.py", line 6, in <module>
+    from model import Connection
+  File "/opt/airflow/dags/model.py", line 5, in <module>
+    from geoalchemy2 import Geometry
+ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-27T01:12:44.340+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T01:12:44.385+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_data_migration.py took 0.147 seconds
+[2023-08-27T01:42:31.009+0000] {processor.py:157} INFO - Started process (PID=4629) to work on /opt/airflow/dags/test_data_migration.py
+[2023-08-27T01:42:31.011+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_data_migration.py for tasks to queue
+[2023-08-27T01:42:31.013+0000] {logging_mixin.py:151} INFO - [2023-08-27T01:42:31.013+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T01:42:31.062+0000] {logging_mixin.py:151} INFO - [2023-08-27T01:42:31.059+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/test_data_migration.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/test_data_migration.py", line 6, in <module>
+    from model import Connection
+  File "/opt/airflow/dags/model.py", line 5, in <module>
+    from geoalchemy2 import Geometry
+ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-27T01:42:31.065+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T01:42:31.087+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_data_migration.py took 0.081 seconds
+[2023-08-27T02:17:39.687+0000] {processor.py:157} INFO - Started process (PID=4645) to work on /opt/airflow/dags/test_data_migration.py
+[2023-08-27T02:17:39.689+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_data_migration.py for tasks to queue
+[2023-08-27T02:17:39.691+0000] {logging_mixin.py:151} INFO - [2023-08-27T02:17:39.691+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T02:17:39.735+0000] {logging_mixin.py:151} INFO - [2023-08-27T02:17:39.731+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/test_data_migration.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/test_data_migration.py", line 6, in <module>
+    from model import Connection
+  File "/opt/airflow/dags/model.py", line 5, in <module>
+    from geoalchemy2 import Geometry
+ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-27T02:17:39.737+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T02:17:39.754+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_data_migration.py took 0.070 seconds
+[2023-08-27T02:32:03.141+0000] {processor.py:157} INFO - Started process (PID=4661) to work on /opt/airflow/dags/test_data_migration.py
+[2023-08-27T02:32:03.143+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_data_migration.py for tasks to queue
+[2023-08-27T02:32:03.144+0000] {logging_mixin.py:151} INFO - [2023-08-27T02:32:03.144+0000] {dagbag.py:539} INFO - Filling up the DagBag from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T02:32:03.206+0000] {logging_mixin.py:151} INFO - [2023-08-27T02:32:03.202+0000] {dagbag.py:347} ERROR - Failed to import: /opt/airflow/dags/test_data_migration.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/test_data_migration.py", line 6, in <module>
+    from model import Connection
+  File "/opt/airflow/dags/model.py", line 5, in <module>
+    from geoalchemy2 import Geometry
+ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-27T02:32:03.207+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/test_data_migration.py
+[2023-08-27T02:32:03.227+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_data_migration.py took 0.091 seconds
