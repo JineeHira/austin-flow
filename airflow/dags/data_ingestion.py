@@ -1,19 +1,20 @@
 import requests, argparse, os
 import pandas as pd
 import json
+from sodapy import Socrata
 from datetime import timedelta, datetime
 
 import config
 
-rename_header = { 'Traffic Report ID'  : 'traffic_report_id', 
-                  'Published Date'     : 'date_time', 
-                  'Issue Reported'     : 'issue_reported', 
-                  'Location'           : 'location', 
-                  'Latitude'           : 'latitude', 
-                  'Longitude'          : 'longitude',
-                  'Address'            : 'address',
-                  'Status'             : 'status',
-                  'Status Date'        : 'status_date'}
+rename_header = { 'traffic_report_id'  : 'traffic_report_id', 
+                  'published_date'     : 'date_time', 
+                  'issue_reported'     : 'issue_reported', 
+                  'location'           : 'location', 
+                  'latitude'           : 'latitude', 
+                  'longitude'          : 'longitude',
+                  'address'            : 'address',
+                  'traffic_report_status'             : 'status',
+                  'traffic_report_status_date_time'   : 'status_date'}
 
 reposition_header = ['timestamp', 'traffic_report_id', 'date_time', 'issue_reported', 'location', 'latitude', 'longitude', 'address',
                      'status', 'status_date']
@@ -27,26 +28,28 @@ def get_file_path(get_date):
     return os.path.join(config.CSV_DIR, filename)
 
 def import_data():
-    url = config.TRAFFIC_API
-    data_req = requests.get(url)
-    data_json = data_req.json()
-    return data_json
+    client = Socrata("data.austintexas.gov",
+                 config.app_token,
+                 username=config.username,
+                 password=config.password)
 
-# Fill missing location values with combined latitude and longitude
-def combine_lat_lon(row):
-    if pd.isna(row['location']) and not (pd.isna(row['latitude']) or pd.isna(row['longitude'])):
-        return f"({row['latitude']}, {row['longitude']})"
-    else:
-        return row['location']
-
-def transform_data(data_json):
-    dataframe = pd.DataFrame(data_json['data'])
+    results = client.get("dx9v-zd7x", 
+                     select="traffic_report_id, published_date, issue_reported, location, latitude, longitude, address, traffic_report_status, traffic_report_status_date_time", 
+                     where="published_date > '2023-08-01T08:36:00.000Z'", limit=20000)
+    
+    results_df = pd.DataFrame.from_records(results)
+    return results_df
+    
+def transform_data(results_df):
+    dataframe = results_df
     df = dataframe.rename(columns = rename_header)
     df['timestamp'] = df['date_time'].copy()
     df = df[reposition_header]
 
-    # clean-up data
-
+    # data type
+    df['latitude'] = df['latitude'].astype(float)
+    df['longitude'] = df['longitude'].astype(float)
+    
     # Cleaning String
     df.loc[:, 'issue_reported'] = df['issue_reported'].str.lower()
     df.loc[:, 'address'] = df['address'].str.lower()
@@ -65,14 +68,11 @@ def transform_data(data_json):
     df.loc[df['issue_reported'] == 'fleet acc/ fatal', 'issue_reported'] = 'fleet accident'
     df.loc[df['issue_reported'] == 'fleet acc/ injury', 'issue_reported'] = 'fleet accident'
 
-    cols_to_remove = ['status', 'status_date']
+    cols_to_remove = ['status', 'status_date', 'location']
     df = df.drop(columns=cols_to_remove)
 
-    df = df.dropna(subset=['latitude', 'longitude', 'location'], how='all')
+    df = df.dropna(subset=['latitude', 'longitude'], how='all')
 
-    # Fill missing location values with combined latitude and longitude
-    # df.loc[df['location'].isna(), 'location'] = df.apply(lambda row: f"({row['latitude']}, {row['longitude']})", axis=1)
-    df['location'] = df.apply(combine_lat_lon, axis=1)
     df = df[~((df['latitude'] < -90) | (df['latitude'] > 90))]
 
     df['timestamp'] = pd.to_datetime(df['timestamp'])
@@ -92,10 +92,6 @@ def get_new_data(df, get_date):
     data_to_append = df[(df['date_time'].dt.date == yesterday)]
     return data_to_append
 
-# def save_new_data_to_csv(data_to_append, get_date):
-#     filename = get_file_path(get_date)
-#     if not data_to_append.empty:
-#         data_to_append.to_csv(filename, encoding='utf-8', index=False)
 
 def save_new_data_to_csv(data_to_append, get_date):
     filename = os.path.join(config.CSV_DIR, get_file_path(get_date))

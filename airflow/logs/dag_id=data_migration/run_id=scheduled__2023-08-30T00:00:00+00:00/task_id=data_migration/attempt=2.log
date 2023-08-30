@@ -1,0 +1,19 @@
+[2023-08-30T20:05:02.162+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:05:02.172+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: data_migration.data_migration scheduled__2023-08-30T00:00:00+00:00 [queued]>
+[2023-08-30T20:05:02.180+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: data_migration.data_migration scheduled__2023-08-30T00:00:00+00:00 [queued]>
+[2023-08-30T20:05:02.182+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2023-08-30T20:05:02.192+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): data_migration> on 2023-08-30 00:00:00+00:00
+[2023-08-30T20:05:02.197+0000] {standard_task_runner.py:57} INFO - Started process 382 to run task
+[2023-08-30T20:05:02.201+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'data_migration', 'data_migration', 'scheduled__2023-08-30T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/data_mig_dag.py', '--cfg-path', '/tmp/tmpo5j5oa0l']
+[2023-08-30T20:05:02.204+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask data_migration
+[2023-08-30T20:05:02.219+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:05:02.263+0000] {task_command.py:415} INFO - Running <TaskInstance: data_migration.data_migration scheduled__2023-08-30T00:00:00+00:00 [running]> on host 3938d7abd9ff
+[2023-08-30T20:05:02.281+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:05:02.336+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='data_migration' AIRFLOW_CTX_TASK_ID='data_migration' AIRFLOW_CTX_EXECUTION_DATE='2023-08-30T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-30T00:00:00+00:00'
+[2023-08-30T20:05:02.339+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T20:05:02.341+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_migration.py --connection postgresql+psycopg2://***:***@postgres/***']
+[2023-08-30T20:05:02.350+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T20:05:02.973+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T20:05:02.998+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=data_migration, task_id=data_migration, execution_date=20230830T000000, start_date=20230830T200502, end_date=20230830T200502
+[2023-08-30T20:05:03.038+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T20:05:03.052+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

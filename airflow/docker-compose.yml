@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 services:
     postgres:
         image: postgres
@@ -21,8 +21,11 @@ services:
         volumes:
             - ./dags:/opt/airflow/dags
             - ./logs:/opt/airflow/logs
+
     webserver:
-        image: apache/airflow
+        build:
+            context: .
+            dockerfile: Dockerfile
         entrypoint: ./scripts/entrypoint.sh
         deploy:
             restart_policy:
@@ -36,5 +39,6 @@ services:
             - ./dags:/opt/airflow/dags
             - ./logs:/opt/airflow/logs
             - ./scripts:/opt/airflow/scripts
+            - ./dags/data:/opt/airflow/dags/data
         ports:
             - "8080:8080"

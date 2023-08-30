@@ -11,7 +11,7 @@ def get_yesterday_date(fetch_date):
 
 def get_file_path(fetch_date):
     yesterday = get_yesterday_date(fetch_date)
-    filename = "traffic_{}.csv".format(yesterday)
+    filename = "dailytraffic_{}.csv".format(yesterday)
     return os.path.join(config.CSV_DIR, filename)
 
 def main(fetch_date, db_connection):
@@ -26,7 +26,6 @@ def main(fetch_date, db_connection):
                                 traffic_report_id=row['traffic_report_id'],
                                 date_time=row['date_time'],
                                 issue_reported=row['issue_reported'],
-                                location=row['location'],
                                 latitude=row['latitude'],
                                 longitude=row['longitude'],
                                 address=row['address'],
