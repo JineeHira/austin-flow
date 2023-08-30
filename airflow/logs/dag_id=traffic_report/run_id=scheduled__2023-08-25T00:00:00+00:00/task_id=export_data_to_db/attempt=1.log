@@ -1,0 +1,572 @@
+[2023-08-30T19:31:43.096+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:31:43.107+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:31:43.117+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:31:43.123+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:31:43.141+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): export_data_to_db> on 2023-08-25 00:00:00+00:00
+[2023-08-30T19:31:43.149+0000] {standard_task_runner.py:57} INFO - Started process 318 to run task
+[2023-08-30T19:31:43.165+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'export_data_to_db', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpxryfq26n']
+[2023-08-30T19:31:43.169+0000] {standard_task_runner.py:85} INFO - Job 15: Subtask export_data_to_db
+[2023-08-30T19:31:43.192+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:31:43.244+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [running]> on host f6bcf103ff79
+[2023-08-30T19:31:43.264+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:31:43.321+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='export_data_to_db' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T19:31:43.323+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:31:43.324+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_to_db.py --date 2023-08-25 --connection postgresql+psycopg2://***:***@postgres/***']
+[2023-08-30T19:31:43.336+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:31:43.741+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T19:31:43.743+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 6, in <module>
+[2023-08-30T19:31:43.744+0000] {subprocess.py:93} INFO -     from model import Connection, Traffic
+[2023-08-30T19:31:43.745+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/model.py", line 5, in <module>
+[2023-08-30T19:31:43.746+0000] {subprocess.py:93} INFO -     from geoalchemy2 import Geometry
+[2023-08-30T19:31:43.748+0000] {subprocess.py:93} INFO - ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-30T19:31:43.781+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-08-30T19:31:43.800+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-08-30T19:31:43.818+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=traffic_report, task_id=export_data_to_db, execution_date=20230825T000000, start_date=20230830T193143, end_date=20230830T193143
+[2023-08-30T19:31:43.849+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 15 for task export_data_to_db (Bash command failed. The command returned a non-zero exit code 1.; 318)
+[2023-08-30T19:31:43.895+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-30T19:31:43.917+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:42:02.050+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:42:02.063+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:42:02.080+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:42:02.081+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:42:02.094+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): export_data_to_db> on 2023-08-25 00:00:00+00:00
+[2023-08-30T19:42:02.100+0000] {standard_task_runner.py:57} INFO - Started process 383 to run task
+[2023-08-30T19:42:02.106+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'export_data_to_db', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpa_o3bcpw']
+[2023-08-30T19:42:02.113+0000] {standard_task_runner.py:85} INFO - Job 14: Subtask export_data_to_db
+[2023-08-30T19:42:02.132+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:42:02.173+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [running]> on host 81eeb4b7c8a9
+[2023-08-30T19:42:02.192+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:42:02.281+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='export_data_to_db' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T19:42:02.293+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:42:02.295+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_to_db.py --date 2023-08-25 --connection postgresql+psycopg2://***:***@postgres/***']
+[2023-08-30T19:42:02.318+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:42:02.875+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T19:42:02.880+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 6, in <module>
+[2023-08-30T19:42:02.881+0000] {subprocess.py:93} INFO -     from model import Connection, Traffic
+[2023-08-30T19:42:02.882+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/model.py", line 5, in <module>
+[2023-08-30T19:42:02.884+0000] {subprocess.py:93} INFO -     from geoalchemy2 import Geometry
+[2023-08-30T19:42:02.885+0000] {subprocess.py:93} INFO - ModuleNotFoundError: No module named 'geoalchemy2'
+[2023-08-30T19:42:02.950+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-08-30T19:42:02.966+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-08-30T19:42:02.979+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=traffic_report, task_id=export_data_to_db, execution_date=20230825T000000, start_date=20230830T194202, end_date=20230830T194202
+[2023-08-30T19:42:02.998+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 14 for task export_data_to_db (Bash command failed. The command returned a non-zero exit code 1.; 383)
+[2023-08-30T19:42:03.011+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-30T19:42:03.036+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:51:05.593+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:51:05.608+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:51:05.623+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:51:05.626+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:51:05.639+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): export_data_to_db> on 2023-08-25 00:00:00+00:00
+[2023-08-30T19:51:05.661+0000] {standard_task_runner.py:57} INFO - Started process 360 to run task
+[2023-08-30T19:51:05.676+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'export_data_to_db', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmp30po_fd1']
+[2023-08-30T19:51:05.686+0000] {standard_task_runner.py:85} INFO - Job 17: Subtask export_data_to_db
+[2023-08-30T19:51:07.011+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:51:07.948+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [running]> on host 206ecb1dc8df
+[2023-08-30T19:51:08.322+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:51:15.259+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='export_data_to_db' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T19:51:15.296+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:51:15.322+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_to_db.py --date 2023-08-25 --connection postgresql+psycopg2://***:***@postgres/***']
+[2023-08-30T19:51:15.374+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:51:33.979+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T19:51:33.991+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 50, in <module>
+[2023-08-30T19:51:33.994+0000] {subprocess.py:93} INFO -     main(args.date, args.connection)
+[2023-08-30T19:51:33.995+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 22, in main
+[2023-08-30T19:51:33.998+0000] {subprocess.py:93} INFO -     with open(filename, encoding='utf-8') as csvf:
+[2023-08-30T19:51:34.001+0000] {subprocess.py:93} INFO - FileNotFoundError: [Errno 2] No such file or directory: '/opt/***/dags/data/traffic_2023-08-24.csv'
+[2023-08-30T19:51:34.144+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-08-30T19:51:34.175+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-08-30T19:51:34.186+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=traffic_report, task_id=export_data_to_db, execution_date=20230825T000000, start_date=20230830T195105, end_date=20230830T195134
+[2023-08-30T19:51:34.212+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 17 for task export_data_to_db (Bash command failed. The command returned a non-zero exit code 1.; 360)
+[2023-08-30T19:51:34.267+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-30T19:51:34.296+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:54:33.298+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:54:33.316+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:54:33.333+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:54:33.336+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:54:33.353+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): export_data_to_db> on 2023-08-25 00:00:00+00:00
+[2023-08-30T19:54:33.358+0000] {standard_task_runner.py:57} INFO - Started process 312 to run task
+[2023-08-30T19:54:33.366+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'export_data_to_db', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpjayiqnbm']
+[2023-08-30T19:54:33.377+0000] {standard_task_runner.py:85} INFO - Job 16: Subtask export_data_to_db
+[2023-08-30T19:54:33.396+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:54:33.447+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [running]> on host 86f9e97d6c70
+[2023-08-30T19:54:33.466+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:54:33.551+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='export_data_to_db' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T19:54:33.564+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:54:33.566+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_to_db.py --date 2023-08-25 --connection postgresql+psycopg2://***:***@postgres/***']
+[2023-08-30T19:54:33.593+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:54:34.571+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T19:54:34.573+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+[2023-08-30T19:54:34.574+0000] {subprocess.py:93} INFO -     self.dialect.do_execute(
+[2023-08-30T19:54:34.577+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+[2023-08-30T19:54:34.578+0000] {subprocess.py:93} INFO -     cursor.execute(statement, parameters)
+[2023-08-30T19:54:34.579+0000] {subprocess.py:93} INFO - psycopg2.errors.UndefinedTable: relation "traffic_report" does not exist
+[2023-08-30T19:54:34.581+0000] {subprocess.py:93} INFO - LINE 1: DELETE FROM traffic_report where date_time >= timestamp '202...
+[2023-08-30T19:54:34.582+0000] {subprocess.py:93} INFO -                     ^
+[2023-08-30T19:54:34.584+0000] {subprocess.py:93} INFO - 
+[2023-08-30T19:54:34.585+0000] {subprocess.py:93} INFO - 
+[2023-08-30T19:54:34.586+0000] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2023-08-30T19:54:34.587+0000] {subprocess.py:93} INFO - 
+[2023-08-30T19:54:34.589+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T19:54:34.591+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 50, in <module>
+[2023-08-30T19:54:34.592+0000] {subprocess.py:93} INFO -     main(args.date, args.connection)
+[2023-08-30T19:54:34.593+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 40, in main
+[2023-08-30T19:54:34.594+0000] {subprocess.py:93} INFO -     session.execute("DELETE FROM traffic_report where date_time >= timestamp '{} 00:00:00' and date_time < timestamp'{} 00:00:00'".format(yesterday, fetch_date))
+[2023-08-30T19:54:34.595+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1717, in execute
+[2023-08-30T19:54:34.596+0000] {subprocess.py:93} INFO -     result = conn._execute_20(statement, params or {}, execution_options)
+[2023-08-30T19:54:34.599+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+[2023-08-30T19:54:34.600+0000] {subprocess.py:93} INFO -     return meth(self, args_10style, kwargs_10style, execution_options)
+[2023-08-30T19:54:34.601+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+[2023-08-30T19:54:34.603+0000] {subprocess.py:93} INFO -     return connection._execute_clauseelement(
+[2023-08-30T19:54:34.605+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+[2023-08-30T19:54:34.606+0000] {subprocess.py:93} INFO -     ret = self._execute_context(
+[2023-08-30T19:54:34.607+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+[2023-08-30T19:54:34.608+0000] {subprocess.py:93} INFO -     self._handle_dbapi_exception(
+[2023-08-30T19:54:34.610+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+[2023-08-30T19:54:34.612+0000] {subprocess.py:93} INFO -     util.raise_(
+[2023-08-30T19:54:34.615+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+[2023-08-30T19:54:34.617+0000] {subprocess.py:93} INFO -     raise exception
+[2023-08-30T19:54:34.619+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+[2023-08-30T19:54:34.621+0000] {subprocess.py:93} INFO -     self.dialect.do_execute(
+[2023-08-30T19:54:34.623+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+[2023-08-30T19:54:34.624+0000] {subprocess.py:93} INFO -     cursor.execute(statement, parameters)
+[2023-08-30T19:54:34.629+0000] {subprocess.py:93} INFO - sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "traffic_report" does not exist
+[2023-08-30T19:54:34.630+0000] {subprocess.py:93} INFO - LINE 1: DELETE FROM traffic_report where date_time >= timestamp '202...
+[2023-08-30T19:54:34.631+0000] {subprocess.py:93} INFO -                     ^
+[2023-08-30T19:54:34.632+0000] {subprocess.py:93} INFO - 
+[2023-08-30T19:54:34.633+0000] {subprocess.py:93} INFO - [SQL: DELETE FROM traffic_report where date_time >= timestamp '2023-08-24 00:00:00' and date_time < timestamp'2023-08-25 00:00:00']
+[2023-08-30T19:54:34.634+0000] {subprocess.py:93} INFO - (Background on this error at: https://sqlalche.me/e/14/f405)
+[2023-08-30T19:54:34.759+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-08-30T19:54:34.774+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-08-30T19:54:34.779+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=traffic_report, task_id=export_data_to_db, execution_date=20230825T000000, start_date=20230830T195433, end_date=20230830T195434
+[2023-08-30T19:54:34.798+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 16 for task export_data_to_db (Bash command failed. The command returned a non-zero exit code 1.; 312)
+[2023-08-30T19:54:34.821+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-30T19:54:34.838+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T20:05:57.097+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:05:57.108+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T20:05:57.118+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T20:05:57.121+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T20:05:57.133+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): export_data_to_db> on 2023-08-25 00:00:00+00:00
+[2023-08-30T20:05:57.141+0000] {standard_task_runner.py:57} INFO - Started process 516 to run task
+[2023-08-30T20:05:57.146+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'export_data_to_db', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpfojshku4']
+[2023-08-30T20:05:57.150+0000] {standard_task_runner.py:85} INFO - Job 21: Subtask export_data_to_db
+[2023-08-30T20:05:57.165+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:05:57.209+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [running]> on host 3938d7abd9ff
+[2023-08-30T20:05:57.222+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:05:57.279+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='export_data_to_db' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T20:05:57.282+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T20:05:57.283+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_to_db.py --date 2023-08-25 --connection postgresql+psycopg2://***:***@postgres/***']
+[2023-08-30T20:05:57.295+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T20:05:58.186+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T20:05:58.187+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+[2023-08-30T20:05:58.188+0000] {subprocess.py:93} INFO -     self.dialect.do_executemany(
+[2023-08-30T20:05:58.190+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+[2023-08-30T20:05:58.193+0000] {subprocess.py:93} INFO -     context._psycopg2_fetched_rows = xtras.execute_values(
+[2023-08-30T20:05:58.195+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/psycopg2/extras.py", line 1299, in execute_values
+[2023-08-30T20:05:58.197+0000] {subprocess.py:93} INFO -     cur.execute(b''.join(parts))
+[2023-08-30T20:05:58.199+0000] {subprocess.py:93} INFO - psycopg2.errors.UndefinedFunction: function st_geomfromewkt(unknown) does not exist
+[2023-08-30T20:05:58.202+0000] {subprocess.py:93} INFO - LINE 1: ...46', '2023-08-24 00:15:46+00:00', 'crash urgent', ST_GeomFro...
+[2023-08-30T20:05:58.203+0000] {subprocess.py:93} INFO -                                                              ^
+[2023-08-30T20:05:58.205+0000] {subprocess.py:93} INFO - HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+[2023-08-30T20:05:58.208+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:05:58.213+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:05:58.215+0000] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2023-08-30T20:05:58.216+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:05:58.218+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T20:05:58.220+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 50, in <module>
+[2023-08-30T20:05:58.222+0000] {subprocess.py:93} INFO -     main(args.date, args.connection)
+[2023-08-30T20:05:58.223+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 41, in main
+[2023-08-30T20:05:58.224+0000] {subprocess.py:93} INFO -     session.bulk_save_objects(data_insert)
+[2023-08-30T20:05:58.225+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3705, in bulk_save_objects
+[2023-08-30T20:05:58.227+0000] {subprocess.py:93} INFO -     self._bulk_save_mappings(
+[2023-08-30T20:05:58.228+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3913, in _bulk_save_mappings
+[2023-08-30T20:05:58.230+0000] {subprocess.py:93} INFO -     transaction.rollback(_capture_exception=True)
+[2023-08-30T20:05:58.231+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+[2023-08-30T20:05:58.240+0000] {subprocess.py:93} INFO -     compat.raise_(
+[2023-08-30T20:05:58.241+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+[2023-08-30T20:05:58.243+0000] {subprocess.py:93} INFO -     raise exception
+[2023-08-30T20:05:58.245+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3901, in _bulk_save_mappings
+[2023-08-30T20:05:58.246+0000] {subprocess.py:93} INFO -     persistence._bulk_insert(
+[2023-08-30T20:05:58.247+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 107, in _bulk_insert
+[2023-08-30T20:05:58.248+0000] {subprocess.py:93} INFO -     _emit_insert_statements(
+[2023-08-30T20:05:58.249+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1097, in _emit_insert_statements
+[2023-08-30T20:05:58.250+0000] {subprocess.py:93} INFO -     c = connection._execute_20(
+[2023-08-30T20:05:58.251+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+[2023-08-30T20:05:58.252+0000] {subprocess.py:93} INFO -     return meth(self, args_10style, kwargs_10style, execution_options)
+[2023-08-30T20:05:58.253+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+[2023-08-30T20:05:58.254+0000] {subprocess.py:93} INFO -     return connection._execute_clauseelement(
+[2023-08-30T20:05:58.258+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+[2023-08-30T20:05:58.260+0000] {subprocess.py:93} INFO -     ret = self._execute_context(
+[2023-08-30T20:05:58.261+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+[2023-08-30T20:05:58.263+0000] {subprocess.py:93} INFO -     self._handle_dbapi_exception(
+[2023-08-30T20:05:58.264+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+[2023-08-30T20:05:58.267+0000] {subprocess.py:93} INFO -     util.raise_(
+[2023-08-30T20:05:58.268+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+[2023-08-30T20:05:58.271+0000] {subprocess.py:93} INFO -     raise exception
+[2023-08-30T20:05:58.273+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+[2023-08-30T20:05:58.275+0000] {subprocess.py:93} INFO -     self.dialect.do_executemany(
+[2023-08-30T20:05:58.276+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+[2023-08-30T20:05:58.278+0000] {subprocess.py:93} INFO -     context._psycopg2_fetched_rows = xtras.execute_values(
+[2023-08-30T20:05:58.281+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/psycopg2/extras.py", line 1299, in execute_values
+[2023-08-30T20:05:58.282+0000] {subprocess.py:93} INFO -     cur.execute(b''.join(parts))
+[2023-08-30T20:05:58.283+0000] {subprocess.py:93} INFO - sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedFunction) function st_geomfromewkt(unknown) does not exist
+[2023-08-30T20:05:58.284+0000] {subprocess.py:93} INFO - LINE 1: ...46', '2023-08-24 00:15:46+00:00', 'crash urgent', ST_GeomFro...
+[2023-08-30T20:05:58.287+0000] {subprocess.py:93} INFO -                                                              ^
+[2023-08-30T20:05:58.288+0000] {subprocess.py:93} INFO - HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+[2023-08-30T20:05:58.289+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:05:58.290+0000] {subprocess.py:93} INFO - [SQL: INSERT INTO traffic_report (timestamp, traffic_report_id, date_time, issue_reported, location, latitude, longitude, address, weekday, date, time) VALUES (%(timestamp)s, %(traffic_report_id)s, %(date_time)s, %(issue_reported)s, ST_GeomFromEWKT(%(location)s), %(latitude)s, %(longitude)s, %(address)s, %(weekday)s, %(date)s, %(time)s)]
+[2023-08-30T20:05:58.292+0000] {subprocess.py:93} INFO - [parameters: ({'timestamp': '1692836146000000000', 'traffic_report_id': '1EB904B6D0C2A41AF59E2D1FDD0E10624D94C81A_1692836146', 'date_time': '2023-08-24 00:15:46+00:00', 'issue_reported': 'crash urgent', 'location': 'POINT(-97.730994 30.274565)', 'latitude': '30.274565', 'longitude': '-97.730994', 'address': 'n ih 35 svrd nb / e 15th st', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:15:46'}, {'timestamp': '1692836160000000000', 'traffic_report_id': '4F221EE9A76B15F3F2737E7344CA4453902FB586_1692836160', 'date_time': '2023-08-24 00:16:00+00:00', 'issue_reported': 'crash urgent', 'location': 'POINT(-97.731784 30.274747)', 'latitude': '30.274747', 'longitude': '-97.731784', 'address': 'e 15th st / n ih 35 svrd sb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:16:00'}, {'timestamp': '1692836338000000000', 'traffic_report_id': 'FDC01209F90EDA589F0453B7E29E0114923ECD8B_1692836338', 'date_time': '2023-08-24 00:18:58+00:00', 'issue_reported': 'crash urgent', 'location': 'POINT(-97.776574 30.486424)', 'latitude': '30.486424', 'longitude': '-97.776574', 'address': '10100 lakeline blvd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:18:58'}, {'timestamp': '1692837086000000000', 'traffic_report_id': '618DCDFB0CD9AE4481164961C4796DD8E3930C8D_1692837086', 'date_time': '2023-08-24 00:31:26+00:00', 'issue_reported': 'crash urgent', 'location': 'POINT(-97.690176 30.41291)', 'latitude': '30.41291', 'longitude': '-97.690176', 'address': '1701-1719 w parmer ln', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:31:26'}, {'timestamp': '1692837107000000000', 'traffic_report_id': 'AC543C4E83644351C47B9DF55E29745BBD90A7BA_1692837107', 'date_time': '2023-08-24 00:31:47+00:00', 'issue_reported': 'loose livestock', 'location': 'POINT(-97.575938 30.374812)', 'latitude': '30.374812', 'longitude': '-97.575938', 'address': '13300-13551 gregg manor rd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:31:47'}, {'timestamp': '1692838964000000000', 'traffic_report_id': '8CE2F7CDC27D512A28746DB1E8895650F9355602_1692838964', 'date_time': '2023-08-24 01:02:44+00:00', 'issue_reported': 'stalled vehicle', 'location': 'POINT(-97.730994 30.274565)', 'latitude': '30.274565', 'longitude': '-97.730994', 'address': 'e 15th st / n ih 35 svrd nb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:02:44'}, {'timestamp': '1692840658000000000', 'traffic_report_id': '4DD7E5DD0410798A96A8F2E380DFE07581D5174B_1692840658', 'date_time': '2023-08-24 01:30:58+00:00', 'issue_reported': 'collision', 'location': 'POINT(-97.815191 30.233508)', 'latitude': '30.233508', 'longitude': '-97.815191', 'address': '4900-blk w us 290 hwy wb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:30:58'}, {'timestamp': '1692841052000000000', 'traffic_report_id': '7167E28632050B446EDAC59DFF38370194317B4A_1692841052', 'date_time': '2023-08-24 01:37:32+00:00', 'issue_reported': 'loose livestock', 'location': 'POINT(-97.489312 30.395926)', 'latitude': '30.395926', 'longitude': '-97.489312', 'address': '13201 jacobson rd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:37:32'}  ... displaying 10 of 133 total bound parameter sets ...  {'timestamp': '1692921480000000000', 'traffic_report_id': '4B7AF5BD2D1026517F203F379E660FE2337A3E33_1692921480', 'date_time': '2023-08-24 23:58:00+00:00', 'issue_reported': 'traffic hazard', 'location': 'POINT(-97.849874 30.143762)', 'latitude': '30.143762', 'longitude': '-97.849874', 'address': 'brodie ln / sully creek dr', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '23:58:00'}, {'timestamp': '1692921508000000000', 'traffic_report_id': '73EE4958BDB5A056029EBD39B8ABBAA3DBC0F333_1692921508', 'date_time': '2023-08-24 23:58:28+00:00', 'issue_reported': 'traffic hazard', 'location': 'POINT(-97.686405 30.381876)', 'latitude': '30.381876', 'longitude': '-97.686405', 'address': 'n lamar blvd / w braker ln', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '23:58:28'})]
+[2023-08-30T20:05:58.294+0000] {subprocess.py:93} INFO - (Background on this error at: https://sqlalche.me/e/14/f405)
+[2023-08-30T20:05:58.378+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-08-30T20:05:58.397+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-08-30T20:05:58.401+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=traffic_report, task_id=export_data_to_db, execution_date=20230825T000000, start_date=20230830T200557, end_date=20230830T200558
+[2023-08-30T20:05:58.420+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 21 for task export_data_to_db (Bash command failed. The command returned a non-zero exit code 1.; 516)
+[2023-08-30T20:05:58.450+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-30T20:05:58.469+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T20:33:59.748+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:33:59.762+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T20:33:59.771+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T20:33:59.773+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T20:33:59.788+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): export_data_to_db> on 2023-08-25 00:00:00+00:00
+[2023-08-30T20:33:59.794+0000] {standard_task_runner.py:57} INFO - Started process 336 to run task
+[2023-08-30T20:33:59.800+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'export_data_to_db', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmp38qk0ajb']
+[2023-08-30T20:33:59.803+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask export_data_to_db
+[2023-08-30T20:33:59.830+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:33:59.885+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [running]> on host 961f38e8363e
+[2023-08-30T20:33:59.913+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:34:00.008+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='export_data_to_db' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T20:34:00.028+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T20:34:00.031+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_to_db.py --date 2023-08-25 --connection postgresql+psycopg2://***:***@postgres/***']
+[2023-08-30T20:34:00.050+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T20:34:01.056+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T20:34:01.057+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+[2023-08-30T20:34:01.059+0000] {subprocess.py:93} INFO -     self.dialect.do_executemany(
+[2023-08-30T20:34:01.061+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+[2023-08-30T20:34:01.063+0000] {subprocess.py:93} INFO -     context._psycopg2_fetched_rows = xtras.execute_values(
+[2023-08-30T20:34:01.064+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/psycopg2/extras.py", line 1299, in execute_values
+[2023-08-30T20:34:01.069+0000] {subprocess.py:93} INFO -     cur.execute(b''.join(parts))
+[2023-08-30T20:34:01.073+0000] {subprocess.py:93} INFO - psycopg2.errors.UndefinedFunction: function st_geomfromewkt(unknown) does not exist
+[2023-08-30T20:34:01.075+0000] {subprocess.py:93} INFO - LINE 1: ...46', '2023-08-24 00:15:46+00:00', 'crash urgent', ST_GeomFro...
+[2023-08-30T20:34:01.076+0000] {subprocess.py:93} INFO -                                                              ^
+[2023-08-30T20:34:01.078+0000] {subprocess.py:93} INFO - HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+[2023-08-30T20:34:01.080+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:34:01.086+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:34:01.088+0000] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2023-08-30T20:34:01.089+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:34:01.091+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T20:34:01.092+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 50, in <module>
+[2023-08-30T20:34:01.093+0000] {subprocess.py:93} INFO -     main(args.date, args.connection)
+[2023-08-30T20:34:01.094+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 41, in main
+[2023-08-30T20:34:01.099+0000] {subprocess.py:93} INFO -     session.bulk_save_objects(data_insert)
+[2023-08-30T20:34:01.102+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3705, in bulk_save_objects
+[2023-08-30T20:34:01.103+0000] {subprocess.py:93} INFO -     self._bulk_save_mappings(
+[2023-08-30T20:34:01.105+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3913, in _bulk_save_mappings
+[2023-08-30T20:34:01.109+0000] {subprocess.py:93} INFO -     transaction.rollback(_capture_exception=True)
+[2023-08-30T20:34:01.111+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+[2023-08-30T20:34:01.113+0000] {subprocess.py:93} INFO -     compat.raise_(
+[2023-08-30T20:34:01.114+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+[2023-08-30T20:34:01.115+0000] {subprocess.py:93} INFO -     raise exception
+[2023-08-30T20:34:01.117+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3901, in _bulk_save_mappings
+[2023-08-30T20:34:01.119+0000] {subprocess.py:93} INFO -     persistence._bulk_insert(
+[2023-08-30T20:34:01.122+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 107, in _bulk_insert
+[2023-08-30T20:34:01.125+0000] {subprocess.py:93} INFO -     _emit_insert_statements(
+[2023-08-30T20:34:01.127+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1097, in _emit_insert_statements
+[2023-08-30T20:34:01.140+0000] {subprocess.py:93} INFO -     c = connection._execute_20(
+[2023-08-30T20:34:01.145+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+[2023-08-30T20:34:01.151+0000] {subprocess.py:93} INFO -     return meth(self, args_10style, kwargs_10style, execution_options)
+[2023-08-30T20:34:01.155+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+[2023-08-30T20:34:01.157+0000] {subprocess.py:93} INFO -     return connection._execute_clauseelement(
+[2023-08-30T20:34:01.159+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+[2023-08-30T20:34:01.160+0000] {subprocess.py:93} INFO -     ret = self._execute_context(
+[2023-08-30T20:34:01.162+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+[2023-08-30T20:34:01.164+0000] {subprocess.py:93} INFO -     self._handle_dbapi_exception(
+[2023-08-30T20:34:01.172+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+[2023-08-30T20:34:01.174+0000] {subprocess.py:93} INFO -     util.raise_(
+[2023-08-30T20:34:01.176+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+[2023-08-30T20:34:01.178+0000] {subprocess.py:93} INFO -     raise exception
+[2023-08-30T20:34:01.179+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+[2023-08-30T20:34:01.183+0000] {subprocess.py:93} INFO -     self.dialect.do_executemany(
+[2023-08-30T20:34:01.186+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+[2023-08-30T20:34:01.188+0000] {subprocess.py:93} INFO -     context._psycopg2_fetched_rows = xtras.execute_values(
+[2023-08-30T20:34:01.190+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/psycopg2/extras.py", line 1299, in execute_values
+[2023-08-30T20:34:01.191+0000] {subprocess.py:93} INFO -     cur.execute(b''.join(parts))
+[2023-08-30T20:34:01.193+0000] {subprocess.py:93} INFO - sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedFunction) function st_geomfromewkt(unknown) does not exist
+[2023-08-30T20:34:01.195+0000] {subprocess.py:93} INFO - LINE 1: ...46', '2023-08-24 00:15:46+00:00', 'crash urgent', ST_GeomFro...
+[2023-08-30T20:34:01.196+0000] {subprocess.py:93} INFO -                                                              ^
+[2023-08-30T20:34:01.198+0000] {subprocess.py:93} INFO - HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+[2023-08-30T20:34:01.203+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:34:01.205+0000] {subprocess.py:93} INFO - [SQL: INSERT INTO traffic_report (timestamp, traffic_report_id, date_time, issue_reported, location, latitude, longitude, address, weekday, date, time) VALUES (%(timestamp)s, %(traffic_report_id)s, %(date_time)s, %(issue_reported)s, ST_GeomFromEWKT(%(location)s), %(latitude)s, %(longitude)s, %(address)s, %(weekday)s, %(date)s, %(time)s)]
+[2023-08-30T20:34:01.209+0000] {subprocess.py:93} INFO - [parameters: ({'timestamp': '1692836146000000000', 'traffic_report_id': '1EB904B6D0C2A41AF59E2D1FDD0E10624D94C81A_1692836146', 'date_time': '2023-08-24 00:15:46+00:00', 'issue_reported': 'crash urgent', 'location': 'POINT(-97.730994 30.274565)', 'latitude': '30.274565', 'longitude': '-97.730994', 'address': 'n ih 35 svrd nb / e 15th st', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:15:46'}, {'timestamp': '1692836160000000000', 'traffic_report_id': '4F221EE9A76B15F3F2737E7344CA4453902FB586_1692836160', 'date_time': '2023-08-24 00:16:00+00:00', 'issue_reported': 'crash urgent', 'location': 'POINT(-97.731784 30.274747)', 'latitude': '30.274747', 'longitude': '-97.731784', 'address': 'e 15th st / n ih 35 svrd sb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:16:00'}, {'timestamp': '1692836338000000000', 'traffic_report_id': 'FDC01209F90EDA589F0453B7E29E0114923ECD8B_1692836338', 'date_time': '2023-08-24 00:18:58+00:00', 'issue_reported': 'crash urgent', 'location': 'POINT(-97.776574 30.486424)', 'latitude': '30.486424', 'longitude': '-97.776574', 'address': '10100 lakeline blvd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:18:58'}, {'timestamp': '1692837086000000000', 'traffic_report_id': '618DCDFB0CD9AE4481164961C4796DD8E3930C8D_1692837086', 'date_time': '2023-08-24 00:31:26+00:00', 'issue_reported': 'crash urgent', 'location': 'POINT(-97.690176 30.41291)', 'latitude': '30.41291', 'longitude': '-97.690176', 'address': '1701-1719 w parmer ln', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:31:26'}, {'timestamp': '1692837107000000000', 'traffic_report_id': 'AC543C4E83644351C47B9DF55E29745BBD90A7BA_1692837107', 'date_time': '2023-08-24 00:31:47+00:00', 'issue_reported': 'loose livestock', 'location': 'POINT(-97.575938 30.374812)', 'latitude': '30.374812', 'longitude': '-97.575938', 'address': '13300-13551 gregg manor rd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:31:47'}, {'timestamp': '1692838964000000000', 'traffic_report_id': '8CE2F7CDC27D512A28746DB1E8895650F9355602_1692838964', 'date_time': '2023-08-24 01:02:44+00:00', 'issue_reported': 'stalled vehicle', 'location': 'POINT(-97.730994 30.274565)', 'latitude': '30.274565', 'longitude': '-97.730994', 'address': 'e 15th st / n ih 35 svrd nb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:02:44'}, {'timestamp': '1692840658000000000', 'traffic_report_id': '4DD7E5DD0410798A96A8F2E380DFE07581D5174B_1692840658', 'date_time': '2023-08-24 01:30:58+00:00', 'issue_reported': 'collision', 'location': 'POINT(-97.815191 30.233508)', 'latitude': '30.233508', 'longitude': '-97.815191', 'address': '4900-blk w us 290 hwy wb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:30:58'}, {'timestamp': '1692841052000000000', 'traffic_report_id': '7167E28632050B446EDAC59DFF38370194317B4A_1692841052', 'date_time': '2023-08-24 01:37:32+00:00', 'issue_reported': 'loose livestock', 'location': 'POINT(-97.489312 30.395926)', 'latitude': '30.395926', 'longitude': '-97.489312', 'address': '13201 jacobson rd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:37:32'}  ... displaying 10 of 133 total bound parameter sets ...  {'timestamp': '1692921480000000000', 'traffic_report_id': '4B7AF5BD2D1026517F203F379E660FE2337A3E33_1692921480', 'date_time': '2023-08-24 23:58:00+00:00', 'issue_reported': 'traffic hazard', 'location': 'POINT(-97.849874 30.143762)', 'latitude': '30.143762', 'longitude': '-97.849874', 'address': 'brodie ln / sully creek dr', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '23:58:00'}, {'timestamp': '1692921508000000000', 'traffic_report_id': '73EE4958BDB5A056029EBD39B8ABBAA3DBC0F333_1692921508', 'date_time': '2023-08-24 23:58:28+00:00', 'issue_reported': 'traffic hazard', 'location': 'POINT(-97.686405 30.381876)', 'latitude': '30.381876', 'longitude': '-97.686405', 'address': 'n lamar blvd / w braker ln', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '23:58:28'})]
+[2023-08-30T20:34:01.214+0000] {subprocess.py:93} INFO - (Background on this error at: https://sqlalche.me/e/14/f405)
+[2023-08-30T20:34:01.268+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-08-30T20:34:01.286+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-08-30T20:34:01.291+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=traffic_report, task_id=export_data_to_db, execution_date=20230825T000000, start_date=20230830T203359, end_date=20230830T203401
+[2023-08-30T20:34:01.345+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 20 for task export_data_to_db (Bash command failed. The command returned a non-zero exit code 1.; 336)
+[2023-08-30T20:34:01.379+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-30T20:34:01.420+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T20:48:32.612+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:48:32.621+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T20:48:32.633+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T20:48:32.636+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T20:48:32.657+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): export_data_to_db> on 2023-08-25 00:00:00+00:00
+[2023-08-30T20:48:32.663+0000] {standard_task_runner.py:57} INFO - Started process 397 to run task
+[2023-08-30T20:48:32.669+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'export_data_to_db', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmp09ndguyj']
+[2023-08-30T20:48:32.673+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask export_data_to_db
+[2023-08-30T20:48:32.690+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:48:32.736+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [running]> on host 8f66711a2898
+[2023-08-30T20:48:32.765+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:48:32.840+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='export_data_to_db' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T20:48:32.844+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T20:48:32.847+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_to_db.py --date 2023-08-25 --connection postgresql+psycopg2://***:***@postgres/***']
+[2023-08-30T20:48:32.862+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T20:48:33.509+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T20:48:33.511+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+[2023-08-30T20:48:33.512+0000] {subprocess.py:93} INFO -     self.dialect.do_executemany(
+[2023-08-30T20:48:33.514+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+[2023-08-30T20:48:33.515+0000] {subprocess.py:93} INFO -     context._psycopg2_fetched_rows = xtras.execute_values(
+[2023-08-30T20:48:33.517+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/psycopg2/extras.py", line 1299, in execute_values
+[2023-08-30T20:48:33.519+0000] {subprocess.py:93} INFO -     cur.execute(b''.join(parts))
+[2023-08-30T20:48:33.520+0000] {subprocess.py:93} INFO - psycopg2.errors.NumericValueOutOfRange: value "1692836146000000000" is out of range for type integer
+[2023-08-30T20:48:33.522+0000] {subprocess.py:93} INFO - LINE 1: ... longitude, address, weekday, date, time) VALUES ('169283614...
+[2023-08-30T20:48:33.525+0000] {subprocess.py:93} INFO -                                                              ^
+[2023-08-30T20:48:33.533+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:48:33.537+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:48:33.538+0000] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2023-08-30T20:48:33.539+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:48:33.542+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T20:48:33.543+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 49, in <module>
+[2023-08-30T20:48:33.545+0000] {subprocess.py:93} INFO -     main(args.date, args.connection)
+[2023-08-30T20:48:33.547+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 40, in main
+[2023-08-30T20:48:33.548+0000] {subprocess.py:93} INFO -     session.bulk_save_objects(data_insert)
+[2023-08-30T20:48:33.549+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3705, in bulk_save_objects
+[2023-08-30T20:48:33.550+0000] {subprocess.py:93} INFO -     self._bulk_save_mappings(
+[2023-08-30T20:48:33.552+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3913, in _bulk_save_mappings
+[2023-08-30T20:48:33.555+0000] {subprocess.py:93} INFO -     transaction.rollback(_capture_exception=True)
+[2023-08-30T20:48:33.558+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+[2023-08-30T20:48:33.559+0000] {subprocess.py:93} INFO -     compat.raise_(
+[2023-08-30T20:48:33.560+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+[2023-08-30T20:48:33.562+0000] {subprocess.py:93} INFO -     raise exception
+[2023-08-30T20:48:33.563+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3901, in _bulk_save_mappings
+[2023-08-30T20:48:33.566+0000] {subprocess.py:93} INFO -     persistence._bulk_insert(
+[2023-08-30T20:48:33.568+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 107, in _bulk_insert
+[2023-08-30T20:48:33.570+0000] {subprocess.py:93} INFO -     _emit_insert_statements(
+[2023-08-30T20:48:33.572+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1097, in _emit_insert_statements
+[2023-08-30T20:48:33.575+0000] {subprocess.py:93} INFO -     c = connection._execute_20(
+[2023-08-30T20:48:33.576+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+[2023-08-30T20:48:33.578+0000] {subprocess.py:93} INFO -     return meth(self, args_10style, kwargs_10style, execution_options)
+[2023-08-30T20:48:33.579+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+[2023-08-30T20:48:33.583+0000] {subprocess.py:93} INFO -     return connection._execute_clauseelement(
+[2023-08-30T20:48:33.584+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+[2023-08-30T20:48:33.585+0000] {subprocess.py:93} INFO -     ret = self._execute_context(
+[2023-08-30T20:48:33.587+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+[2023-08-30T20:48:33.588+0000] {subprocess.py:93} INFO -     self._handle_dbapi_exception(
+[2023-08-30T20:48:33.590+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+[2023-08-30T20:48:33.591+0000] {subprocess.py:93} INFO -     util.raise_(
+[2023-08-30T20:48:33.592+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+[2023-08-30T20:48:33.593+0000] {subprocess.py:93} INFO -     raise exception
+[2023-08-30T20:48:33.594+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+[2023-08-30T20:48:33.598+0000] {subprocess.py:93} INFO -     self.dialect.do_executemany(
+[2023-08-30T20:48:33.599+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+[2023-08-30T20:48:33.600+0000] {subprocess.py:93} INFO -     context._psycopg2_fetched_rows = xtras.execute_values(
+[2023-08-30T20:48:33.601+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/psycopg2/extras.py", line 1299, in execute_values
+[2023-08-30T20:48:33.602+0000] {subprocess.py:93} INFO -     cur.execute(b''.join(parts))
+[2023-08-30T20:48:33.604+0000] {subprocess.py:93} INFO - sqlalchemy.exc.DataError: (psycopg2.errors.NumericValueOutOfRange) value "1692836146000000000" is out of range for type integer
+[2023-08-30T20:48:33.605+0000] {subprocess.py:93} INFO - LINE 1: ... longitude, address, weekday, date, time) VALUES ('169283614...
+[2023-08-30T20:48:33.606+0000] {subprocess.py:93} INFO -                                                              ^
+[2023-08-30T20:48:33.608+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:48:33.610+0000] {subprocess.py:93} INFO - [SQL: INSERT INTO traffic_report (timestamp, traffic_report_id, date_time, issue_reported, latitude, longitude, address, weekday, date, time) VALUES (%(timestamp)s, %(traffic_report_id)s, %(date_time)s, %(issue_reported)s, %(latitude)s, %(longitude)s, %(address)s, %(weekday)s, %(date)s, %(time)s)]
+[2023-08-30T20:48:33.611+0000] {subprocess.py:93} INFO - [parameters: ({'timestamp': '1692836146000000000', 'traffic_report_id': '1EB904B6D0C2A41AF59E2D1FDD0E10624D94C81A_1692836146', 'date_time': '2023-08-24 00:15:46+00:00', 'issue_reported': 'crash urgent', 'latitude': '30.274565', 'longitude': '-97.730994', 'address': 'n ih 35 svrd nb / e 15th st', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:15:46'}, {'timestamp': '1692836160000000000', 'traffic_report_id': '4F221EE9A76B15F3F2737E7344CA4453902FB586_1692836160', 'date_time': '2023-08-24 00:16:00+00:00', 'issue_reported': 'crash urgent', 'latitude': '30.274747', 'longitude': '-97.731784', 'address': 'e 15th st / n ih 35 svrd sb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:16:00'}, {'timestamp': '1692836338000000000', 'traffic_report_id': 'FDC01209F90EDA589F0453B7E29E0114923ECD8B_1692836338', 'date_time': '2023-08-24 00:18:58+00:00', 'issue_reported': 'crash urgent', 'latitude': '30.486424', 'longitude': '-97.776574', 'address': '10100 lakeline blvd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:18:58'}, {'timestamp': '1692837086000000000', 'traffic_report_id': '618DCDFB0CD9AE4481164961C4796DD8E3930C8D_1692837086', 'date_time': '2023-08-24 00:31:26+00:00', 'issue_reported': 'crash urgent', 'latitude': '30.41291', 'longitude': '-97.690176', 'address': '1701-1719 w parmer ln', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:31:26'}, {'timestamp': '1692837107000000000', 'traffic_report_id': 'AC543C4E83644351C47B9DF55E29745BBD90A7BA_1692837107', 'date_time': '2023-08-24 00:31:47+00:00', 'issue_reported': 'loose livestock', 'latitude': '30.374812', 'longitude': '-97.575938', 'address': '13300-13551 gregg manor rd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:31:47'}, {'timestamp': '1692838964000000000', 'traffic_report_id': '8CE2F7CDC27D512A28746DB1E8895650F9355602_1692838964', 'date_time': '2023-08-24 01:02:44+00:00', 'issue_reported': 'stalled vehicle', 'latitude': '30.274565', 'longitude': '-97.730994', 'address': 'e 15th st / n ih 35 svrd nb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:02:44'}, {'timestamp': '1692840658000000000', 'traffic_report_id': '4DD7E5DD0410798A96A8F2E380DFE07581D5174B_1692840658', 'date_time': '2023-08-24 01:30:58+00:00', 'issue_reported': 'collision', 'latitude': '30.233508', 'longitude': '-97.815191', 'address': '4900-blk w us 290 hwy wb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:30:58'}, {'timestamp': '1692841052000000000', 'traffic_report_id': '7167E28632050B446EDAC59DFF38370194317B4A_1692841052', 'date_time': '2023-08-24 01:37:32+00:00', 'issue_reported': 'loose livestock', 'latitude': '30.395926', 'longitude': '-97.489312', 'address': '13201 jacobson rd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:37:32'}  ... displaying 10 of 133 total bound parameter sets ...  {'timestamp': '1692921480000000000', 'traffic_report_id': '4B7AF5BD2D1026517F203F379E660FE2337A3E33_1692921480', 'date_time': '2023-08-24 23:58:00+00:00', 'issue_reported': 'traffic hazard', 'latitude': '30.143762', 'longitude': '-97.849874', 'address': 'brodie ln / sully creek dr', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '23:58:00'}, {'timestamp': '1692921508000000000', 'traffic_report_id': '73EE4958BDB5A056029EBD39B8ABBAA3DBC0F333_1692921508', 'date_time': '2023-08-24 23:58:28+00:00', 'issue_reported': 'traffic hazard', 'latitude': '30.381876', 'longitude': '-97.686405', 'address': 'n lamar blvd / w braker ln', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '23:58:28'})]
+[2023-08-30T20:48:33.613+0000] {subprocess.py:93} INFO - (Background on this error at: https://sqlalche.me/e/14/9h9h)
+[2023-08-30T20:48:33.665+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-08-30T20:48:33.681+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-08-30T20:48:33.686+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=traffic_report, task_id=export_data_to_db, execution_date=20230825T000000, start_date=20230830T204832, end_date=20230830T204833
+[2023-08-30T20:48:33.700+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 20 for task export_data_to_db (Bash command failed. The command returned a non-zero exit code 1.; 397)
+[2023-08-30T20:48:33.725+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-30T20:48:33.744+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T21:07:56.291+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:07:56.308+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T21:07:56.325+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T21:07:56.331+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T21:07:56.348+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): export_data_to_db> on 2023-08-25 00:00:00+00:00
+[2023-08-30T21:07:56.354+0000] {standard_task_runner.py:57} INFO - Started process 369 to run task
+[2023-08-30T21:07:56.361+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'export_data_to_db', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmph8ud_8cw']
+[2023-08-30T21:07:56.365+0000] {standard_task_runner.py:85} INFO - Job 17: Subtask export_data_to_db
+[2023-08-30T21:07:56.384+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:07:56.430+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [running]> on host cbc745b7550b
+[2023-08-30T21:07:56.453+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:07:56.537+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='export_data_to_db' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T21:07:56.539+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T21:07:56.540+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_to_db.py --date 2023-08-25 --connection postgresql+psycopg2://***:***@postgres/***']
+[2023-08-30T21:07:56.558+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T21:07:57.351+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T21:07:57.353+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+[2023-08-30T21:07:57.355+0000] {subprocess.py:93} INFO -     self.dialect.do_executemany(
+[2023-08-30T21:07:57.357+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+[2023-08-30T21:07:57.362+0000] {subprocess.py:93} INFO -     context._psycopg2_fetched_rows = xtras.execute_values(
+[2023-08-30T21:07:57.365+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/psycopg2/extras.py", line 1299, in execute_values
+[2023-08-30T21:07:57.370+0000] {subprocess.py:93} INFO -     cur.execute(b''.join(parts))
+[2023-08-30T21:07:57.371+0000] {subprocess.py:93} INFO - psycopg2.errors.StringDataRightTruncation: value too long for type character varying(20)
+[2023-08-30T21:07:57.374+0000] {subprocess.py:93} INFO - 
+[2023-08-30T21:07:57.378+0000] {subprocess.py:93} INFO - 
+[2023-08-30T21:07:57.380+0000] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2023-08-30T21:07:57.383+0000] {subprocess.py:93} INFO - 
+[2023-08-30T21:07:57.385+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T21:07:57.388+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 49, in <module>
+[2023-08-30T21:07:57.390+0000] {subprocess.py:93} INFO -     main(args.date, args.connection)
+[2023-08-30T21:07:57.392+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 40, in main
+[2023-08-30T21:07:57.393+0000] {subprocess.py:93} INFO -     session.bulk_save_objects(data_insert)
+[2023-08-30T21:07:57.396+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3705, in bulk_save_objects
+[2023-08-30T21:07:57.399+0000] {subprocess.py:93} INFO -     self._bulk_save_mappings(
+[2023-08-30T21:07:57.401+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3913, in _bulk_save_mappings
+[2023-08-30T21:07:57.402+0000] {subprocess.py:93} INFO -     transaction.rollback(_capture_exception=True)
+[2023-08-30T21:07:57.404+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+[2023-08-30T21:07:57.405+0000] {subprocess.py:93} INFO -     compat.raise_(
+[2023-08-30T21:07:57.406+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+[2023-08-30T21:07:57.409+0000] {subprocess.py:93} INFO -     raise exception
+[2023-08-30T21:07:57.410+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3901, in _bulk_save_mappings
+[2023-08-30T21:07:57.416+0000] {subprocess.py:93} INFO -     persistence._bulk_insert(
+[2023-08-30T21:07:57.421+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 107, in _bulk_insert
+[2023-08-30T21:07:57.423+0000] {subprocess.py:93} INFO -     _emit_insert_statements(
+[2023-08-30T21:07:57.425+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1097, in _emit_insert_statements
+[2023-08-30T21:07:57.428+0000] {subprocess.py:93} INFO -     c = connection._execute_20(
+[2023-08-30T21:07:57.429+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+[2023-08-30T21:07:57.431+0000] {subprocess.py:93} INFO -     return meth(self, args_10style, kwargs_10style, execution_options)
+[2023-08-30T21:07:57.432+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+[2023-08-30T21:07:57.434+0000] {subprocess.py:93} INFO -     return connection._execute_clauseelement(
+[2023-08-30T21:07:57.435+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+[2023-08-30T21:07:57.436+0000] {subprocess.py:93} INFO -     ret = self._execute_context(
+[2023-08-30T21:07:57.439+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+[2023-08-30T21:07:57.442+0000] {subprocess.py:93} INFO -     self._handle_dbapi_exception(
+[2023-08-30T21:07:57.443+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+[2023-08-30T21:07:57.444+0000] {subprocess.py:93} INFO -     util.raise_(
+[2023-08-30T21:07:57.445+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+[2023-08-30T21:07:57.447+0000] {subprocess.py:93} INFO -     raise exception
+[2023-08-30T21:07:57.448+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+[2023-08-30T21:07:57.449+0000] {subprocess.py:93} INFO -     self.dialect.do_executemany(
+[2023-08-30T21:07:57.453+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+[2023-08-30T21:07:57.455+0000] {subprocess.py:93} INFO -     context._psycopg2_fetched_rows = xtras.execute_values(
+[2023-08-30T21:07:57.456+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/psycopg2/extras.py", line 1299, in execute_values
+[2023-08-30T21:07:57.457+0000] {subprocess.py:93} INFO -     cur.execute(b''.join(parts))
+[2023-08-30T21:07:57.459+0000] {subprocess.py:93} INFO - sqlalchemy.exc.DataError: (psycopg2.errors.StringDataRightTruncation) value too long for type character varying(20)
+[2023-08-30T21:07:57.460+0000] {subprocess.py:93} INFO - 
+[2023-08-30T21:07:57.461+0000] {subprocess.py:93} INFO - [SQL: INSERT INTO traffic_report (timestamp, traffic_report_id, date_time, issue_reported, latitude, longitude, address, weekday, date, time) VALUES (%(timestamp)s, %(traffic_report_id)s, %(date_time)s, %(issue_reported)s, %(latitude)s, %(longitude)s, %(address)s, %(weekday)s, %(date)s, %(time)s)]
+[2023-08-30T21:07:57.463+0000] {subprocess.py:93} INFO - [parameters: ({'timestamp': '1692836146000000000', 'traffic_report_id': '1EB904B6D0C2A41AF59E2D1FDD0E10624D94C81A_1692836146', 'date_time': '2023-08-24 00:15:46+00:00', 'issue_reported': 'crash urgent', 'latitude': '30.274565', 'longitude': '-97.730994', 'address': 'n ih 35 svrd nb / e 15th st', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:15:46'}, {'timestamp': '1692836160000000000', 'traffic_report_id': '4F221EE9A76B15F3F2737E7344CA4453902FB586_1692836160', 'date_time': '2023-08-24 00:16:00+00:00', 'issue_reported': 'crash urgent', 'latitude': '30.274747', 'longitude': '-97.731784', 'address': 'e 15th st / n ih 35 svrd sb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:16:00'}, {'timestamp': '1692836338000000000', 'traffic_report_id': 'FDC01209F90EDA589F0453B7E29E0114923ECD8B_1692836338', 'date_time': '2023-08-24 00:18:58+00:00', 'issue_reported': 'crash urgent', 'latitude': '30.486424', 'longitude': '-97.776574', 'address': '10100 lakeline blvd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:18:58'}, {'timestamp': '1692837086000000000', 'traffic_report_id': '618DCDFB0CD9AE4481164961C4796DD8E3930C8D_1692837086', 'date_time': '2023-08-24 00:31:26+00:00', 'issue_reported': 'crash urgent', 'latitude': '30.41291', 'longitude': '-97.690176', 'address': '1701-1719 w parmer ln', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:31:26'}, {'timestamp': '1692837107000000000', 'traffic_report_id': 'AC543C4E83644351C47B9DF55E29745BBD90A7BA_1692837107', 'date_time': '2023-08-24 00:31:47+00:00', 'issue_reported': 'loose livestock', 'latitude': '30.374812', 'longitude': '-97.575938', 'address': '13300-13551 gregg manor rd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:31:47'}, {'timestamp': '1692838964000000000', 'traffic_report_id': '8CE2F7CDC27D512A28746DB1E8895650F9355602_1692838964', 'date_time': '2023-08-24 01:02:44+00:00', 'issue_reported': 'stalled vehicle', 'latitude': '30.274565', 'longitude': '-97.730994', 'address': 'e 15th st / n ih 35 svrd nb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:02:44'}, {'timestamp': '1692840658000000000', 'traffic_report_id': '4DD7E5DD0410798A96A8F2E380DFE07581D5174B_1692840658', 'date_time': '2023-08-24 01:30:58+00:00', 'issue_reported': 'collision', 'latitude': '30.233508', 'longitude': '-97.815191', 'address': '4900-blk w us 290 hwy wb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:30:58'}, {'timestamp': '1692841052000000000', 'traffic_report_id': '7167E28632050B446EDAC59DFF38370194317B4A_1692841052', 'date_time': '2023-08-24 01:37:32+00:00', 'issue_reported': 'loose livestock', 'latitude': '30.395926', 'longitude': '-97.489312', 'address': '13201 jacobson rd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:37:32'}  ... displaying 10 of 133 total bound parameter sets ...  {'timestamp': '1692921480000000000', 'traffic_report_id': '4B7AF5BD2D1026517F203F379E660FE2337A3E33_1692921480', 'date_time': '2023-08-24 23:58:00+00:00', 'issue_reported': 'traffic hazard', 'latitude': '30.143762', 'longitude': '-97.849874', 'address': 'brodie ln / sully creek dr', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '23:58:00'}, {'timestamp': '1692921508000000000', 'traffic_report_id': '73EE4958BDB5A056029EBD39B8ABBAA3DBC0F333_1692921508', 'date_time': '2023-08-24 23:58:28+00:00', 'issue_reported': 'traffic hazard', 'latitude': '30.381876', 'longitude': '-97.686405', 'address': 'n lamar blvd / w braker ln', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '23:58:28'})]
+[2023-08-30T21:07:57.465+0000] {subprocess.py:93} INFO - (Background on this error at: https://sqlalche.me/e/14/9h9h)
+[2023-08-30T21:07:57.466+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-08-30T21:07:57.487+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-08-30T21:07:57.496+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=traffic_report, task_id=export_data_to_db, execution_date=20230825T000000, start_date=20230830T210756, end_date=20230830T210757
+[2023-08-30T21:07:57.516+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 17 for task export_data_to_db (Bash command failed. The command returned a non-zero exit code 1.; 369)
+[2023-08-30T21:07:57.549+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-30T21:07:57.571+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T21:17:15.117+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:17:15.132+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T21:17:15.143+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T21:17:15.144+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T21:17:15.159+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): export_data_to_db> on 2023-08-25 00:00:00+00:00
+[2023-08-30T21:17:15.164+0000] {standard_task_runner.py:57} INFO - Started process 409 to run task
+[2023-08-30T21:17:15.173+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'export_data_to_db', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmp05m1drcu']
+[2023-08-30T21:17:15.176+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask export_data_to_db
+[2023-08-30T21:17:15.197+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:17:15.241+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.export_data_to_db scheduled__2023-08-25T00:00:00+00:00 [running]> on host 5b9f14bf20e0
+[2023-08-30T21:17:15.258+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:17:15.332+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='export_data_to_db' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T21:17:15.343+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T21:17:15.344+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_to_db.py --date 2023-08-25 --connection postgresql+psycopg2://***:***@postgres/***']
+[2023-08-30T21:17:15.359+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T21:17:16.063+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T21:17:16.065+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+[2023-08-30T21:17:16.067+0000] {subprocess.py:93} INFO -     self.dialect.do_executemany(
+[2023-08-30T21:17:16.068+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+[2023-08-30T21:17:16.069+0000] {subprocess.py:93} INFO -     context._psycopg2_fetched_rows = xtras.execute_values(
+[2023-08-30T21:17:16.070+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/psycopg2/extras.py", line 1299, in execute_values
+[2023-08-30T21:17:16.071+0000] {subprocess.py:93} INFO -     cur.execute(b''.join(parts))
+[2023-08-30T21:17:16.072+0000] {subprocess.py:93} INFO - psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "traffic_report_pkey"
+[2023-08-30T21:17:16.073+0000] {subprocess.py:93} INFO - DETAIL:  Key ("timestamp")=(1692899428000000000) already exists.
+[2023-08-30T21:17:16.074+0000] {subprocess.py:93} INFO - 
+[2023-08-30T21:17:16.075+0000] {subprocess.py:93} INFO - 
+[2023-08-30T21:17:16.076+0000] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2023-08-30T21:17:16.077+0000] {subprocess.py:93} INFO - 
+[2023-08-30T21:17:16.078+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-08-30T21:17:16.078+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 49, in <module>
+[2023-08-30T21:17:16.079+0000] {subprocess.py:93} INFO -     main(args.date, args.connection)
+[2023-08-30T21:17:16.081+0000] {subprocess.py:93} INFO -   File "/opt/***/dags/data_to_db.py", line 40, in main
+[2023-08-30T21:17:16.081+0000] {subprocess.py:93} INFO -     session.bulk_save_objects(data_insert)
+[2023-08-30T21:17:16.083+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3705, in bulk_save_objects
+[2023-08-30T21:17:16.084+0000] {subprocess.py:93} INFO -     self._bulk_save_mappings(
+[2023-08-30T21:17:16.084+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3913, in _bulk_save_mappings
+[2023-08-30T21:17:16.086+0000] {subprocess.py:93} INFO -     transaction.rollback(_capture_exception=True)
+[2023-08-30T21:17:16.087+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+[2023-08-30T21:17:16.088+0000] {subprocess.py:93} INFO -     compat.raise_(
+[2023-08-30T21:17:16.090+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+[2023-08-30T21:17:16.091+0000] {subprocess.py:93} INFO -     raise exception
+[2023-08-30T21:17:16.092+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 3901, in _bulk_save_mappings
+[2023-08-30T21:17:16.093+0000] {subprocess.py:93} INFO -     persistence._bulk_insert(
+[2023-08-30T21:17:16.094+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 107, in _bulk_insert
+[2023-08-30T21:17:16.104+0000] {subprocess.py:93} INFO -     _emit_insert_statements(
+[2023-08-30T21:17:16.105+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/orm/persistence.py", line 1097, in _emit_insert_statements
+[2023-08-30T21:17:16.106+0000] {subprocess.py:93} INFO -     c = connection._execute_20(
+[2023-08-30T21:17:16.108+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+[2023-08-30T21:17:16.109+0000] {subprocess.py:93} INFO -     return meth(self, args_10style, kwargs_10style, execution_options)
+[2023-08-30T21:17:16.109+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+[2023-08-30T21:17:16.111+0000] {subprocess.py:93} INFO -     return connection._execute_clauseelement(
+[2023-08-30T21:17:16.112+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+[2023-08-30T21:17:16.112+0000] {subprocess.py:93} INFO -     ret = self._execute_context(
+[2023-08-30T21:17:16.113+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+[2023-08-30T21:17:16.115+0000] {subprocess.py:93} INFO -     self._handle_dbapi_exception(
+[2023-08-30T21:17:16.116+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+[2023-08-30T21:17:16.118+0000] {subprocess.py:93} INFO -     util.raise_(
+[2023-08-30T21:17:16.120+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+[2023-08-30T21:17:16.122+0000] {subprocess.py:93} INFO -     raise exception
+[2023-08-30T21:17:16.123+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+[2023-08-30T21:17:16.125+0000] {subprocess.py:93} INFO -     self.dialect.do_executemany(
+[2023-08-30T21:17:16.125+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+[2023-08-30T21:17:16.126+0000] {subprocess.py:93} INFO -     context._psycopg2_fetched_rows = xtras.execute_values(
+[2023-08-30T21:17:16.128+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.8/site-packages/psycopg2/extras.py", line 1299, in execute_values
+[2023-08-30T21:17:16.129+0000] {subprocess.py:93} INFO -     cur.execute(b''.join(parts))
+[2023-08-30T21:17:16.130+0000] {subprocess.py:93} INFO - sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "traffic_report_pkey"
+[2023-08-30T21:17:16.131+0000] {subprocess.py:93} INFO - DETAIL:  Key ("timestamp")=(1692899428000000000) already exists.
+[2023-08-30T21:17:16.132+0000] {subprocess.py:93} INFO - 
+[2023-08-30T21:17:16.133+0000] {subprocess.py:93} INFO - [SQL: INSERT INTO traffic_report (timestamp, traffic_report_id, date_time, issue_reported, latitude, longitude, address, weekday, date, time) VALUES (%(timestamp)s, %(traffic_report_id)s, %(date_time)s, %(issue_reported)s, %(latitude)s, %(longitude)s, %(address)s, %(weekday)s, %(date)s, %(time)s)]
+[2023-08-30T21:17:16.134+0000] {subprocess.py:93} INFO - [parameters: ({'timestamp': '1692836146000000000', 'traffic_report_id': '1EB904B6D0C2A41AF59E2D1FDD0E10624D94C81A_1692836146', 'date_time': '2023-08-24 00:15:46+00:00', 'issue_reported': 'crash urgent', 'latitude': '30.274565', 'longitude': '-97.730994', 'address': 'n ih 35 svrd nb / e 15th st', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:15:46'}, {'timestamp': '1692836160000000000', 'traffic_report_id': '4F221EE9A76B15F3F2737E7344CA4453902FB586_1692836160', 'date_time': '2023-08-24 00:16:00+00:00', 'issue_reported': 'crash urgent', 'latitude': '30.274747', 'longitude': '-97.731784', 'address': 'e 15th st / n ih 35 svrd sb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:16:00'}, {'timestamp': '1692836338000000000', 'traffic_report_id': 'FDC01209F90EDA589F0453B7E29E0114923ECD8B_1692836338', 'date_time': '2023-08-24 00:18:58+00:00', 'issue_reported': 'crash urgent', 'latitude': '30.486424', 'longitude': '-97.776574', 'address': '10100 lakeline blvd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:18:58'}, {'timestamp': '1692837086000000000', 'traffic_report_id': '618DCDFB0CD9AE4481164961C4796DD8E3930C8D_1692837086', 'date_time': '2023-08-24 00:31:26+00:00', 'issue_reported': 'crash urgent', 'latitude': '30.41291', 'longitude': '-97.690176', 'address': '1701-1719 w parmer ln', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:31:26'}, {'timestamp': '1692837107000000000', 'traffic_report_id': 'AC543C4E83644351C47B9DF55E29745BBD90A7BA_1692837107', 'date_time': '2023-08-24 00:31:47+00:00', 'issue_reported': 'loose livestock', 'latitude': '30.374812', 'longitude': '-97.575938', 'address': '13300-13551 gregg manor rd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '00:31:47'}, {'timestamp': '1692838964000000000', 'traffic_report_id': '8CE2F7CDC27D512A28746DB1E8895650F9355602_1692838964', 'date_time': '2023-08-24 01:02:44+00:00', 'issue_reported': 'stalled vehicle', 'latitude': '30.274565', 'longitude': '-97.730994', 'address': 'e 15th st / n ih 35 svrd nb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:02:44'}, {'timestamp': '1692840658000000000', 'traffic_report_id': '4DD7E5DD0410798A96A8F2E380DFE07581D5174B_1692840658', 'date_time': '2023-08-24 01:30:58+00:00', 'issue_reported': 'collision', 'latitude': '30.233508', 'longitude': '-97.815191', 'address': '4900-blk w us 290 hwy wb', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:30:58'}, {'timestamp': '1692841052000000000', 'traffic_report_id': '7167E28632050B446EDAC59DFF38370194317B4A_1692841052', 'date_time': '2023-08-24 01:37:32+00:00', 'issue_reported': 'loose livestock', 'latitude': '30.395926', 'longitude': '-97.489312', 'address': '13201 jacobson rd', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '01:37:32'}  ... displaying 10 of 133 total bound parameter sets ...  {'timestamp': '1692921480000000000', 'traffic_report_id': '4B7AF5BD2D1026517F203F379E660FE2337A3E33_1692921480', 'date_time': '2023-08-24 23:58:00+00:00', 'issue_reported': 'traffic hazard', 'latitude': '30.143762', 'longitude': '-97.849874', 'address': 'brodie ln / sully creek dr', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '23:58:00'}, {'timestamp': '1692921508000000000', 'traffic_report_id': '73EE4958BDB5A056029EBD39B8ABBAA3DBC0F333_1692921508', 'date_time': '2023-08-24 23:58:28+00:00', 'issue_reported': 'traffic hazard', 'latitude': '30.381876', 'longitude': '-97.686405', 'address': 'n lamar blvd / w braker ln', 'weekday': 'Thursday', 'date': '2023-08-24', 'time': '23:58:28'})]
+[2023-08-30T21:17:16.136+0000] {subprocess.py:93} INFO - (Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2023-08-30T21:17:16.137+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-08-30T21:17:16.157+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-08-30T21:17:16.164+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=traffic_report, task_id=export_data_to_db, execution_date=20230825T000000, start_date=20230830T211715, end_date=20230830T211716
+[2023-08-30T21:17:16.182+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 20 for task export_data_to_db (Bash command failed. The command returned a non-zero exit code 1.; 409)
+[2023-08-30T21:17:16.232+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-30T21:17:16.252+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check

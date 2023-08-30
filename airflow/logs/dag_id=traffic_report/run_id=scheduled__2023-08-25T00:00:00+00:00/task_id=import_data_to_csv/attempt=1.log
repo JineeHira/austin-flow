@@ -1,0 +1,249 @@
+[2023-08-29T19:43:56.310+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-29T19:43:56.324+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-29T19:43:56.332+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-29T19:43:56.333+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-29T19:43:56.352+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): import_data_to_csv> on 2023-08-25 00:00:00+00:00
+[2023-08-29T19:43:56.357+0000] {standard_task_runner.py:57} INFO - Started process 356 to run task
+[2023-08-29T19:43:56.367+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'import_data_to_csv', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmprn8vqazb']
+[2023-08-29T19:43:56.371+0000] {standard_task_runner.py:85} INFO - Job 23: Subtask import_data_to_csv
+[2023-08-29T19:43:56.431+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-29T19:43:56.507+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [running]> on host e69093e17de8
+[2023-08-29T19:43:56.530+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-29T19:43:56.621+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='import_data_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-29T19:43:56.634+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-29T19:43:56.636+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /Users/jinee.hira/Dropbox/virtual_envs/austin-flow/***/dags/data_ingestion.py --date 2023-08-25']
+[2023-08-29T19:43:56.651+0000] {subprocess.py:86} INFO - Output:
+[2023-08-29T19:43:56.815+0000] {subprocess.py:93} INFO - python: can't open file '/Users/jinee.hira/Dropbox/virtual_envs/austin-flow/***/dags/data_ingestion.py': [Errno 2] No such file or directory
+[2023-08-29T19:43:56.821+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2023-08-29T19:43:56.839+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2023-08-29T19:43:56.844+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=traffic_report, task_id=import_data_to_csv, execution_date=20230825T000000, start_date=20230829T194356, end_date=20230829T194356
+[2023-08-29T19:43:56.876+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 23 for task import_data_to_csv (Bash command failed. The command returned a non-zero exit code 2.; 356)
+[2023-08-29T19:43:56.941+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-29T19:43:56.975+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T18:56:46.293+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T18:56:46.308+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T18:56:46.319+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T18:56:46.321+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T18:56:46.344+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): import_data_to_csv> on 2023-08-25 00:00:00+00:00
+[2023-08-30T18:56:46.351+0000] {standard_task_runner.py:57} INFO - Started process 549 to run task
+[2023-08-30T18:56:46.371+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'import_data_to_csv', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpxv3741c7']
+[2023-08-30T18:56:46.375+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask import_data_to_csv
+[2023-08-30T18:56:46.400+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T18:56:46.463+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [running]> on host 5e7fbf8b7901
+[2023-08-30T18:56:46.479+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T18:56:46.576+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='import_data_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T18:56:46.583+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T18:56:46.585+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /Users/jinee.hira/Dropbox/virtual_envs/austin-flow/***/dags/data_ingestion.py --date 2023-08-25']
+[2023-08-30T18:56:46.621+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T18:56:46.710+0000] {subprocess.py:93} INFO - python: can't open file '/Users/jinee.hira/Dropbox/virtual_envs/austin-flow/***/dags/data_ingestion.py': [Errno 2] No such file or directory
+[2023-08-30T18:56:46.715+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2023-08-30T18:56:46.730+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2023-08-30T18:56:46.735+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=traffic_report, task_id=import_data_to_csv, execution_date=20230825T000000, start_date=20230830T185646, end_date=20230830T185646
+[2023-08-30T18:56:46.753+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 12 for task import_data_to_csv (Bash command failed. The command returned a non-zero exit code 2.; 549)
+[2023-08-30T18:56:46.773+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-30T18:56:46.802+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:20:00.549+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:20:00.565+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:20:00.579+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:20:00.583+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:20:00.605+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): import_data_to_csv> on 2023-08-25 00:00:00+00:00
+[2023-08-30T19:20:00.610+0000] {standard_task_runner.py:57} INFO - Started process 272 to run task
+[2023-08-30T19:20:00.618+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'import_data_to_csv', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpmbbs0aot']
+[2023-08-30T19:20:00.627+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask import_data_to_csv
+[2023-08-30T19:20:00.658+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:20:00.714+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [running]> on host 884d86529f65
+[2023-08-30T19:20:00.733+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:20:00.816+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='import_data_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T19:20:00.825+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:20:00.827+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python ./dags/data_ingestion.py --date 2023-08-25']
+[2023-08-30T19:20:00.852+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:20:00.942+0000] {subprocess.py:93} INFO - python: can't open file './dags/data_ingestion.py': [Errno 2] No such file or directory
+[2023-08-30T19:20:00.947+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2023-08-30T19:20:00.966+0000] {taskinstance.py:1943} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2023-08-30T19:20:00.974+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=traffic_report, task_id=import_data_to_csv, execution_date=20230825T000000, start_date=20230830T192000, end_date=20230830T192000
+[2023-08-30T19:20:00.997+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 11 for task import_data_to_csv (Bash command failed. The command returned a non-zero exit code 2.; 272)
+[2023-08-30T19:20:01.030+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-08-30T19:20:01.052+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:31:37.205+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:31:37.218+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:31:37.227+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:31:37.228+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:31:37.242+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): import_data_to_csv> on 2023-08-25 00:00:00+00:00
+[2023-08-30T19:31:37.256+0000] {standard_task_runner.py:57} INFO - Started process 268 to run task
+[2023-08-30T19:31:37.266+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'import_data_to_csv', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpn8t1gk1r']
+[2023-08-30T19:31:37.270+0000] {standard_task_runner.py:85} INFO - Job 9: Subtask import_data_to_csv
+[2023-08-30T19:31:37.286+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:31:37.333+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [running]> on host f6bcf103ff79
+[2023-08-30T19:31:37.355+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:31:37.443+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='import_data_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T19:31:37.445+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:31:37.449+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_ingestion.py --date 2023-08-25']
+[2023-08-30T19:31:37.465+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:31:41.669+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T19:31:41.696+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=import_data_to_csv, execution_date=20230825T000000, start_date=20230830T193137, end_date=20230830T193141
+[2023-08-30T19:31:41.749+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T19:31:41.771+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:41:53.566+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:41:53.580+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:41:53.593+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:41:53.595+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:41:53.606+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): import_data_to_csv> on 2023-08-25 00:00:00+00:00
+[2023-08-30T19:41:53.614+0000] {standard_task_runner.py:57} INFO - Started process 327 to run task
+[2023-08-30T19:41:53.625+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'import_data_to_csv', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmp1asrkjq6']
+[2023-08-30T19:41:53.630+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask import_data_to_csv
+[2023-08-30T19:41:53.666+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:41:53.727+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [running]> on host 81eeb4b7c8a9
+[2023-08-30T19:41:53.745+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:41:53.833+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='import_data_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T19:41:53.835+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:41:53.838+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_ingestion.py --date 2023-08-25']
+[2023-08-30T19:41:53.850+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:42:00.326+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T19:42:00.368+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=import_data_to_csv, execution_date=20230825T000000, start_date=20230830T194153, end_date=20230830T194200
+[2023-08-30T19:42:00.409+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T19:42:00.433+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:50:53.716+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:50:53.729+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:50:53.746+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:50:53.747+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:50:53.766+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): import_data_to_csv> on 2023-08-25 00:00:00+00:00
+[2023-08-30T19:50:53.772+0000] {standard_task_runner.py:57} INFO - Started process 304 to run task
+[2023-08-30T19:50:53.776+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'import_data_to_csv', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmp57x9a808']
+[2023-08-30T19:50:53.784+0000] {standard_task_runner.py:85} INFO - Job 8: Subtask import_data_to_csv
+[2023-08-30T19:50:53.805+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:50:53.852+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [running]> on host 206ecb1dc8df
+[2023-08-30T19:50:53.886+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:50:53.965+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='import_data_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T19:50:53.972+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:50:53.975+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_ingestion.py --date 2023-08-25']
+[2023-08-30T19:50:53.993+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:51:01.562+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T19:51:01.638+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=import_data_to_csv, execution_date=20230825T000000, start_date=20230830T195053, end_date=20230830T195101
+[2023-08-30T19:51:01.710+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T19:51:01.808+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:54:26.259+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:54:26.272+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:54:26.281+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T19:54:26.282+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:54:26.307+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): import_data_to_csv> on 2023-08-25 00:00:00+00:00
+[2023-08-30T19:54:26.317+0000] {standard_task_runner.py:57} INFO - Started process 263 to run task
+[2023-08-30T19:54:26.338+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'import_data_to_csv', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpm91bn133']
+[2023-08-30T19:54:26.347+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask import_data_to_csv
+[2023-08-30T19:54:26.372+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:54:26.423+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [running]> on host 86f9e97d6c70
+[2023-08-30T19:54:26.441+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:54:26.512+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='import_data_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T19:54:26.515+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:54:26.517+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_ingestion.py --date 2023-08-25']
+[2023-08-30T19:54:26.538+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:54:30.509+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T19:54:30.547+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=import_data_to_csv, execution_date=20230825T000000, start_date=20230830T195426, end_date=20230830T195430
+[2023-08-30T19:54:30.577+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T19:54:30.611+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T20:05:49.238+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:05:49.252+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T20:05:49.266+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T20:05:49.268+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T20:05:49.289+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): import_data_to_csv> on 2023-08-25 00:00:00+00:00
+[2023-08-30T20:05:49.297+0000] {standard_task_runner.py:57} INFO - Started process 468 to run task
+[2023-08-30T20:05:49.304+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'import_data_to_csv', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmp80gq4r2q']
+[2023-08-30T20:05:49.310+0000] {standard_task_runner.py:85} INFO - Job 15: Subtask import_data_to_csv
+[2023-08-30T20:05:49.331+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:05:49.385+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [running]> on host 3938d7abd9ff
+[2023-08-30T20:05:49.404+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:05:49.480+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='import_data_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T20:05:49.482+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T20:05:49.484+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_ingestion.py --date 2023-08-25']
+[2023-08-30T20:05:49.497+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T20:05:55.895+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T20:05:55.945+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=import_data_to_csv, execution_date=20230825T000000, start_date=20230830T200549, end_date=20230830T200555
+[2023-08-30T20:05:55.987+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T20:05:56.024+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T20:33:50.115+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:33:50.128+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T20:33:50.141+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T20:33:50.142+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T20:33:50.165+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): import_data_to_csv> on 2023-08-25 00:00:00+00:00
+[2023-08-30T20:33:50.172+0000] {standard_task_runner.py:57} INFO - Started process 286 to run task
+[2023-08-30T20:33:50.180+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'import_data_to_csv', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpfgfs1ksr']
+[2023-08-30T20:33:50.184+0000] {standard_task_runner.py:85} INFO - Job 15: Subtask import_data_to_csv
+[2023-08-30T20:33:50.217+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:33:50.265+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [running]> on host 961f38e8363e
+[2023-08-30T20:33:50.286+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:33:50.363+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='import_data_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T20:33:50.366+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T20:33:50.368+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_ingestion.py --date 2023-08-25']
+[2023-08-30T20:33:50.388+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T20:33:56.244+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T20:33:56.298+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=import_data_to_csv, execution_date=20230825T000000, start_date=20230830T203350, end_date=20230830T203356
+[2023-08-30T20:33:56.326+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T20:33:56.355+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T20:48:23.526+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:48:23.536+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T20:48:23.549+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T20:48:23.550+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T20:48:23.569+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): import_data_to_csv> on 2023-08-25 00:00:00+00:00
+[2023-08-30T20:48:23.573+0000] {standard_task_runner.py:57} INFO - Started process 338 to run task
+[2023-08-30T20:48:23.576+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'import_data_to_csv', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmps0m0rsf1']
+[2023-08-30T20:48:23.585+0000] {standard_task_runner.py:85} INFO - Job 13: Subtask import_data_to_csv
+[2023-08-30T20:48:23.602+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:48:23.655+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [running]> on host 8f66711a2898
+[2023-08-30T20:48:23.678+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:48:23.754+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='import_data_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T20:48:23.757+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T20:48:23.758+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_ingestion.py --date 2023-08-25']
+[2023-08-30T20:48:23.779+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T20:48:30.695+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T20:48:30.742+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=import_data_to_csv, execution_date=20230825T000000, start_date=20230830T204823, end_date=20230830T204830
+[2023-08-30T20:48:30.786+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T20:48:30.820+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T21:07:36.652+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:07:36.669+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T21:07:36.680+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T21:07:36.681+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T21:07:36.699+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): import_data_to_csv> on 2023-08-25 00:00:00+00:00
+[2023-08-30T21:07:36.708+0000] {standard_task_runner.py:57} INFO - Started process 296 to run task
+[2023-08-30T21:07:36.720+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'import_data_to_csv', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpmu1cms91']
+[2023-08-30T21:07:36.725+0000] {standard_task_runner.py:85} INFO - Job 14: Subtask import_data_to_csv
+[2023-08-30T21:07:36.818+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:07:36.918+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [running]> on host cbc745b7550b
+[2023-08-30T21:07:36.943+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:07:37.082+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='import_data_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T21:07:37.085+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T21:07:37.087+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_ingestion.py --date 2023-08-25']
+[2023-08-30T21:07:37.117+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T21:07:52.845+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T21:07:52.905+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=import_data_to_csv, execution_date=20230825T000000, start_date=20230830T210736, end_date=20230830T210752
+[2023-08-30T21:07:52.941+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T21:07:52.977+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T21:17:04.206+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:17:04.234+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T21:17:04.247+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [queued]>
+[2023-08-30T21:17:04.249+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T21:17:04.276+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): import_data_to_csv> on 2023-08-25 00:00:00+00:00
+[2023-08-30T21:17:04.283+0000] {standard_task_runner.py:57} INFO - Started process 356 to run task
+[2023-08-30T21:17:04.287+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'import_data_to_csv', 'scheduled__2023-08-25T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmp27c9z98o']
+[2023-08-30T21:17:04.291+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask import_data_to_csv
+[2023-08-30T21:17:04.309+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:17:04.373+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.import_data_to_csv scheduled__2023-08-25T00:00:00+00:00 [running]> on host 5b9f14bf20e0
+[2023-08-30T21:17:04.404+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:17:04.502+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='import_data_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2023-08-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-25T00:00:00+00:00'
+[2023-08-30T21:17:04.507+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T21:17:04.510+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python /opt/***/dags/data_ingestion.py --date 2023-08-25']
+[2023-08-30T21:17:04.524+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T21:17:13.032+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T21:17:13.075+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=import_data_to_csv, execution_date=20230825T000000, start_date=20230830T211704, end_date=20230830T211713
+[2023-08-30T21:17:13.130+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T21:17:13.157+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check

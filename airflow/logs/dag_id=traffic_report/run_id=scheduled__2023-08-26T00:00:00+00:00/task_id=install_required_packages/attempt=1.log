@@ -1,0 +1,357 @@
+[2023-08-30T18:56:37.307+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T18:56:37.319+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T18:56:37.330+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T18:56:37.330+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T18:56:37.347+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): install_required_packages> on 2023-08-26 00:00:00+00:00
+[2023-08-30T18:56:37.362+0000] {standard_task_runner.py:57} INFO - Started process 505 to run task
+[2023-08-30T18:56:37.375+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'install_required_packages', 'scheduled__2023-08-26T00:00:00+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpgo4iuyzm']
+[2023-08-30T18:56:37.407+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask install_required_packages
+[2023-08-30T18:56:37.467+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T18:56:37.569+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [running]> on host 5e7fbf8b7901
+[2023-08-30T18:56:37.608+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T18:56:37.711+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='install_required_packages' AIRFLOW_CTX_EXECUTION_DATE='2023-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-26T00:00:00+00:00'
+[2023-08-30T18:56:37.714+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T18:56:37.716+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pip install sodapy']
+[2023-08-30T18:56:37.730+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T18:56:39.308+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-08-30T18:56:40.040+0000] {subprocess.py:93} INFO - Collecting sodapy
+[2023-08-30T18:56:40.111+0000] {subprocess.py:93} INFO -   Downloading sodapy-2.2.0-py2.py3-none-any.whl (15 kB)
+[2023-08-30T18:56:40.126+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.28.1 in /home/***/.local/lib/python3.8/site-packages (from sodapy) (2.31.0)
+[2023-08-30T18:56:40.136+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.4)
+[2023-08-30T18:56:40.138+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (2023.7.22)
+[2023-08-30T18:56:40.140+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (1.26.16)
+[2023-08-30T18:56:40.144+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.2.0)
+[2023-08-30T18:56:43.913+0000] {subprocess.py:93} INFO - Installing collected packages: sodapy
+[2023-08-30T18:56:43.957+0000] {subprocess.py:93} INFO - Successfully installed sodapy-2.2.0
+[2023-08-30T18:56:44.243+0000] {subprocess.py:93} INFO - 
+[2023-08-30T18:56:44.244+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 23.2.1
+[2023-08-30T18:56:44.245+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2023-08-30T18:56:44.492+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T18:56:44.575+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=install_required_packages, execution_date=20230826T000000, start_date=20230830T185637, end_date=20230830T185644
+[2023-08-30T18:56:44.651+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T18:56:44.691+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:19:23.806+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:19:23.818+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T19:19:23.827+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T19:19:23.828+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:19:23.845+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): install_required_packages> on 2023-08-26 00:00:00+00:00
+[2023-08-30T19:19:23.855+0000] {standard_task_runner.py:57} INFO - Started process 219 to run task
+[2023-08-30T19:19:23.897+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'install_required_packages', 'scheduled__2023-08-26T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpj2byjn5h']
+[2023-08-30T19:19:23.905+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask install_required_packages
+[2023-08-30T19:19:23.962+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:19:24.042+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [running]> on host 884d86529f65
+[2023-08-30T19:19:24.068+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:19:24.181+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='install_required_packages' AIRFLOW_CTX_EXECUTION_DATE='2023-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-26T00:00:00+00:00'
+[2023-08-30T19:19:24.188+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:19:24.192+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pip install sodapy']
+[2023-08-30T19:19:24.210+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:19:28.614+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-08-30T19:19:29.494+0000] {subprocess.py:93} INFO - Collecting sodapy
+[2023-08-30T19:19:29.590+0000] {subprocess.py:93} INFO -   Downloading sodapy-2.2.0-py2.py3-none-any.whl (15 kB)
+[2023-08-30T19:19:29.608+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.28.1 in /home/***/.local/lib/python3.8/site-packages (from sodapy) (2.31.0)
+[2023-08-30T19:19:29.615+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (1.26.16)
+[2023-08-30T19:19:29.617+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.2.0)
+[2023-08-30T19:19:29.623+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (2023.7.22)
+[2023-08-30T19:19:29.626+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.4)
+[2023-08-30T19:19:57.080+0000] {subprocess.py:93} INFO - Installing collected packages: sodapy
+[2023-08-30T19:19:57.430+0000] {subprocess.py:93} INFO - Successfully installed sodapy-2.2.0
+[2023-08-30T19:19:57.772+0000] {subprocess.py:93} INFO - 
+[2023-08-30T19:19:57.774+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 23.2.1
+[2023-08-30T19:19:57.775+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2023-08-30T19:19:58.077+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T19:19:58.125+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=install_required_packages, execution_date=20230826T000000, start_date=20230830T191923, end_date=20230830T191958
+[2023-08-30T19:19:58.179+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T19:19:58.211+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:31:06.364+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:31:06.376+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T19:31:06.383+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T19:31:06.385+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:31:06.402+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): install_required_packages> on 2023-08-26 00:00:00+00:00
+[2023-08-30T19:31:06.408+0000] {standard_task_runner.py:57} INFO - Started process 217 to run task
+[2023-08-30T19:31:06.414+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'install_required_packages', 'scheduled__2023-08-26T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpja4gun26']
+[2023-08-30T19:31:06.421+0000] {standard_task_runner.py:85} INFO - Job 2: Subtask install_required_packages
+[2023-08-30T19:31:06.503+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:31:06.618+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [running]> on host f6bcf103ff79
+[2023-08-30T19:31:06.656+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:31:06.783+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='install_required_packages' AIRFLOW_CTX_EXECUTION_DATE='2023-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-26T00:00:00+00:00'
+[2023-08-30T19:31:06.797+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:31:06.801+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pip install sodapy']
+[2023-08-30T19:31:06.827+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:31:08.989+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-08-30T19:31:11.134+0000] {subprocess.py:93} INFO - Collecting sodapy
+[2023-08-30T19:31:11.554+0000] {subprocess.py:93} INFO -   Downloading sodapy-2.2.0-py2.py3-none-any.whl (15 kB)
+[2023-08-30T19:31:11.603+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.28.1 in /home/***/.local/lib/python3.8/site-packages (from sodapy) (2.31.0)
+[2023-08-30T19:31:11.629+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.2.0)
+[2023-08-30T19:31:11.765+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (1.26.16)
+[2023-08-30T19:31:11.789+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.4)
+[2023-08-30T19:31:11.810+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (2023.7.22)
+[2023-08-30T19:31:32.946+0000] {subprocess.py:93} INFO - Installing collected packages: sodapy
+[2023-08-30T19:31:33.135+0000] {subprocess.py:93} INFO - Successfully installed sodapy-2.2.0
+[2023-08-30T19:31:33.312+0000] {subprocess.py:93} INFO - 
+[2023-08-30T19:31:33.314+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 23.2.1
+[2023-08-30T19:31:33.316+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2023-08-30T19:31:33.620+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T19:31:33.694+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=install_required_packages, execution_date=20230826T000000, start_date=20230830T193106, end_date=20230830T193133
+[2023-08-30T19:31:33.744+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T19:31:33.773+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:41:18.493+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:41:18.510+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T19:41:18.518+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T19:41:18.521+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:41:18.545+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): install_required_packages> on 2023-08-26 00:00:00+00:00
+[2023-08-30T19:41:18.555+0000] {standard_task_runner.py:57} INFO - Started process 280 to run task
+[2023-08-30T19:41:18.564+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'install_required_packages', 'scheduled__2023-08-26T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpwj1sz4_c']
+[2023-08-30T19:41:18.567+0000] {standard_task_runner.py:85} INFO - Job 3: Subtask install_required_packages
+[2023-08-30T19:41:18.627+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:41:18.730+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [running]> on host 81eeb4b7c8a9
+[2023-08-30T19:41:18.753+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:41:18.876+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='install_required_packages' AIRFLOW_CTX_EXECUTION_DATE='2023-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-26T00:00:00+00:00'
+[2023-08-30T19:41:18.895+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:41:18.897+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pip install sodapy']
+[2023-08-30T19:41:18.916+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:41:24.980+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-08-30T19:41:33.435+0000] {subprocess.py:93} INFO - Collecting sodapy
+[2023-08-30T19:41:33.813+0000] {subprocess.py:93} INFO -   Downloading sodapy-2.2.0-py2.py3-none-any.whl (15 kB)
+[2023-08-30T19:41:33.848+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.28.1 in /home/***/.local/lib/python3.8/site-packages (from sodapy) (2.31.0)
+[2023-08-30T19:41:33.884+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.2.0)
+[2023-08-30T19:41:33.886+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (2023.7.22)
+[2023-08-30T19:41:33.890+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.4)
+[2023-08-30T19:41:33.892+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (1.26.16)
+[2023-08-30T19:41:48.830+0000] {subprocess.py:93} INFO - Installing collected packages: sodapy
+[2023-08-30T19:41:48.958+0000] {subprocess.py:93} INFO - Successfully installed sodapy-2.2.0
+[2023-08-30T19:41:49.445+0000] {subprocess.py:93} INFO - 
+[2023-08-30T19:41:49.447+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 23.2.1
+[2023-08-30T19:41:49.448+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2023-08-30T19:41:49.828+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T19:41:49.877+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=install_required_packages, execution_date=20230826T000000, start_date=20230830T194118, end_date=20230830T194149
+[2023-08-30T19:41:49.941+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T19:41:49.967+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:50:05.875+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:50:05.892+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T19:50:05.915+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T19:50:05.918+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:50:05.935+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): install_required_packages> on 2023-08-26 00:00:00+00:00
+[2023-08-30T19:50:05.956+0000] {standard_task_runner.py:57} INFO - Started process 244 to run task
+[2023-08-30T19:50:05.968+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'install_required_packages', 'scheduled__2023-08-26T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmppx7jv338']
+[2023-08-30T19:50:05.973+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask install_required_packages
+[2023-08-30T19:50:10.839+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:50:11.014+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [running]> on host 206ecb1dc8df
+[2023-08-30T19:50:11.052+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:50:11.316+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='install_required_packages' AIRFLOW_CTX_EXECUTION_DATE='2023-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-26T00:00:00+00:00'
+[2023-08-30T19:50:11.322+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:50:11.327+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pip install sodapy geoalchemy2']
+[2023-08-30T19:50:11.407+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:50:25.536+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-08-30T19:50:30.707+0000] {subprocess.py:93} INFO - Collecting sodapy
+[2023-08-30T19:50:30.879+0000] {subprocess.py:93} INFO -   Downloading sodapy-2.2.0-py2.py3-none-any.whl (15 kB)
+[2023-08-30T19:50:31.240+0000] {subprocess.py:93} INFO - Collecting geoalchemy2
+[2023-08-30T19:50:31.266+0000] {subprocess.py:93} INFO -   Downloading GeoAlchemy2-0.14.1-py3-none-any.whl (54 kB)
+[2023-08-30T19:50:31.298+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.0/55.0 kB 1.6 MB/s eta 0:00:00
+[2023-08-30T19:50:31.304+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.28.1 in /home/***/.local/lib/python3.8/site-packages (from sodapy) (2.31.0)
+[2023-08-30T19:50:31.309+0000] {subprocess.py:93} INFO - Requirement already satisfied: packaging in /home/***/.local/lib/python3.8/site-packages (from geoalchemy2) (23.1)
+[2023-08-30T19:50:31.310+0000] {subprocess.py:93} INFO - Requirement already satisfied: SQLAlchemy>=1.4 in /home/***/.local/lib/python3.8/site-packages (from geoalchemy2) (1.4.49)
+[2023-08-30T19:50:31.325+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (1.26.16)
+[2023-08-30T19:50:31.327+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.2.0)
+[2023-08-30T19:50:31.328+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.4)
+[2023-08-30T19:50:31.330+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (2023.7.22)
+[2023-08-30T19:50:31.459+0000] {subprocess.py:93} INFO - Requirement already satisfied: greenlet!=0.4.17 in /home/***/.local/lib/python3.8/site-packages (from SQLAlchemy>=1.4->geoalchemy2) (2.0.2)
+[2023-08-30T19:50:49.191+0000] {subprocess.py:93} INFO - Installing collected packages: sodapy, geoalchemy2
+[2023-08-30T19:50:49.279+0000] {subprocess.py:93} INFO - Successfully installed geoalchemy2-0.14.1 sodapy-2.2.0
+[2023-08-30T19:50:49.689+0000] {subprocess.py:93} INFO - 
+[2023-08-30T19:50:49.690+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 23.2.1
+[2023-08-30T19:50:49.692+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2023-08-30T19:50:50.026+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T19:50:50.075+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=install_required_packages, execution_date=20230826T000000, start_date=20230830T195005, end_date=20230830T195050
+[2023-08-30T19:50:50.113+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T19:50:50.168+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T19:54:01.070+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:54:01.079+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T19:54:01.093+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T19:54:01.095+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T19:54:01.110+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): install_required_packages> on 2023-08-26 00:00:00+00:00
+[2023-08-30T19:54:01.118+0000] {standard_task_runner.py:57} INFO - Started process 204 to run task
+[2023-08-30T19:54:01.124+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'install_required_packages', 'scheduled__2023-08-26T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmp47t7nip4']
+[2023-08-30T19:54:01.129+0000] {standard_task_runner.py:85} INFO - Job 5: Subtask install_required_packages
+[2023-08-30T19:54:01.207+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:54:01.330+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [running]> on host 86f9e97d6c70
+[2023-08-30T19:54:01.372+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T19:54:01.494+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='install_required_packages' AIRFLOW_CTX_EXECUTION_DATE='2023-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-26T00:00:00+00:00'
+[2023-08-30T19:54:01.498+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T19:54:01.499+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pip install sodapy geoalchemy2']
+[2023-08-30T19:54:01.516+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T19:54:04.576+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-08-30T19:54:05.173+0000] {subprocess.py:93} INFO - Collecting sodapy
+[2023-08-30T19:54:05.274+0000] {subprocess.py:93} INFO -   Downloading sodapy-2.2.0-py2.py3-none-any.whl (15 kB)
+[2023-08-30T19:54:05.321+0000] {subprocess.py:93} INFO - Collecting geoalchemy2
+[2023-08-30T19:54:05.623+0000] {subprocess.py:93} INFO -   Downloading GeoAlchemy2-0.14.1-py3-none-any.whl (54 kB)
+[2023-08-30T19:54:05.670+0000] {subprocess.py:93} INFO -      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.0/55.0 kB 1.3 MB/s eta 0:00:00
+[2023-08-30T19:54:05.679+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.28.1 in /home/***/.local/lib/python3.8/site-packages (from sodapy) (2.31.0)
+[2023-08-30T19:54:05.684+0000] {subprocess.py:93} INFO - Requirement already satisfied: SQLAlchemy>=1.4 in /home/***/.local/lib/python3.8/site-packages (from geoalchemy2) (1.4.49)
+[2023-08-30T19:54:05.685+0000] {subprocess.py:93} INFO - Requirement already satisfied: packaging in /home/***/.local/lib/python3.8/site-packages (from geoalchemy2) (23.1)
+[2023-08-30T19:54:05.689+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.2.0)
+[2023-08-30T19:54:05.690+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (2023.7.22)
+[2023-08-30T19:54:05.692+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (1.26.16)
+[2023-08-30T19:54:05.693+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.4)
+[2023-08-30T19:54:05.779+0000] {subprocess.py:93} INFO - Requirement already satisfied: greenlet!=0.4.17 in /home/***/.local/lib/python3.8/site-packages (from SQLAlchemy>=1.4->geoalchemy2) (2.0.2)
+[2023-08-30T19:54:23.391+0000] {subprocess.py:93} INFO - Installing collected packages: sodapy, geoalchemy2
+[2023-08-30T19:54:23.522+0000] {subprocess.py:93} INFO - Successfully installed geoalchemy2-0.14.1 sodapy-2.2.0
+[2023-08-30T19:54:23.530+0000] {subprocess.py:93} INFO - 
+[2023-08-30T19:54:23.532+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 23.2.1
+[2023-08-30T19:54:23.533+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2023-08-30T19:54:23.754+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T19:54:23.798+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=install_required_packages, execution_date=20230826T000000, start_date=20230830T195401, end_date=20230830T195423
+[2023-08-30T19:54:23.856+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T19:54:23.921+0000] {taskinstance.py:2784} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T20:05:25.531+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:05:25.551+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T20:05:25.565+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T20:05:25.567+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T20:05:25.593+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): install_required_packages> on 2023-08-26 00:00:00+00:00
+[2023-08-30T20:05:25.607+0000] {standard_task_runner.py:57} INFO - Started process 415 to run task
+[2023-08-30T20:05:25.630+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'install_required_packages', 'scheduled__2023-08-26T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpqgnz8as2']
+[2023-08-30T20:05:25.645+0000] {standard_task_runner.py:85} INFO - Job 10: Subtask install_required_packages
+[2023-08-30T20:05:25.754+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:05:28.431+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [running]> on host 3938d7abd9ff
+[2023-08-30T20:05:28.462+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:05:28.549+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='install_required_packages' AIRFLOW_CTX_EXECUTION_DATE='2023-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-26T00:00:00+00:00'
+[2023-08-30T20:05:28.552+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T20:05:28.553+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pip install sodapy geoalchemy2']
+[2023-08-30T20:05:28.579+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T20:05:38.323+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-08-30T20:05:41.632+0000] {subprocess.py:93} INFO - Requirement already satisfied: sodapy in /home/***/.local/lib/python3.8/site-packages (2.2.0)
+[2023-08-30T20:05:41.635+0000] {subprocess.py:93} INFO - Requirement already satisfied: geoalchemy2 in /home/***/.local/lib/python3.8/site-packages (0.14.1)
+[2023-08-30T20:05:41.637+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.28.1 in /home/***/.local/lib/python3.8/site-packages (from sodapy) (2.31.0)
+[2023-08-30T20:05:41.639+0000] {subprocess.py:93} INFO - Requirement already satisfied: SQLAlchemy>=1.4 in /home/***/.local/lib/python3.8/site-packages (from geoalchemy2) (1.4.49)
+[2023-08-30T20:05:41.641+0000] {subprocess.py:93} INFO - Requirement already satisfied: packaging in /home/***/.local/lib/python3.8/site-packages (from geoalchemy2) (23.1)
+[2023-08-30T20:05:41.643+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.4)
+[2023-08-30T20:05:41.644+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (2023.7.22)
+[2023-08-30T20:05:41.645+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.2.0)
+[2023-08-30T20:05:41.646+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (1.26.16)
+[2023-08-30T20:05:41.689+0000] {subprocess.py:93} INFO - Requirement already satisfied: greenlet!=0.4.17 in /home/***/.local/lib/python3.8/site-packages (from SQLAlchemy>=1.4->geoalchemy2) (2.0.2)
+[2023-08-30T20:05:45.558+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:05:45.565+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 23.2.1
+[2023-08-30T20:05:45.567+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2023-08-30T20:05:45.821+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T20:05:45.920+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=install_required_packages, execution_date=20230826T000000, start_date=20230830T200525, end_date=20230830T200545
+[2023-08-30T20:05:45.980+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T20:05:46.005+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T20:33:19.748+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:33:19.765+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T20:33:19.775+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T20:33:19.776+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T20:33:19.806+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): install_required_packages> on 2023-08-26 00:00:00+00:00
+[2023-08-30T20:33:19.821+0000] {standard_task_runner.py:57} INFO - Started process 234 to run task
+[2023-08-30T20:33:19.898+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'install_required_packages', 'scheduled__2023-08-26T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpxxi8hvsg']
+[2023-08-30T20:33:19.952+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask install_required_packages
+[2023-08-30T20:33:20.020+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:33:20.142+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [running]> on host 961f38e8363e
+[2023-08-30T20:33:20.166+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:33:28.914+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='install_required_packages' AIRFLOW_CTX_EXECUTION_DATE='2023-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-26T00:00:00+00:00'
+[2023-08-30T20:33:28.995+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T20:33:28.999+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pip install sodapy geoalchemy2']
+[2023-08-30T20:33:29.026+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T20:33:33.762+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-08-30T20:33:39.283+0000] {subprocess.py:93} INFO - Requirement already satisfied: sodapy in /home/***/.local/lib/python3.8/site-packages (2.2.0)
+[2023-08-30T20:33:39.285+0000] {subprocess.py:93} INFO - Requirement already satisfied: geoalchemy2 in /home/***/.local/lib/python3.8/site-packages (0.14.1)
+[2023-08-30T20:33:39.292+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.28.1 in /home/***/.local/lib/python3.8/site-packages (from sodapy) (2.31.0)
+[2023-08-30T20:33:39.304+0000] {subprocess.py:93} INFO - Requirement already satisfied: SQLAlchemy>=1.4 in /home/***/.local/lib/python3.8/site-packages (from geoalchemy2) (1.4.49)
+[2023-08-30T20:33:39.305+0000] {subprocess.py:93} INFO - Requirement already satisfied: packaging in /home/***/.local/lib/python3.8/site-packages (from geoalchemy2) (23.1)
+[2023-08-30T20:33:39.310+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (1.26.16)
+[2023-08-30T20:33:39.321+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (2023.7.22)
+[2023-08-30T20:33:39.323+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.2.0)
+[2023-08-30T20:33:39.323+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.4)
+[2023-08-30T20:33:39.487+0000] {subprocess.py:93} INFO - Requirement already satisfied: greenlet!=0.4.17 in /home/***/.local/lib/python3.8/site-packages (from SQLAlchemy>=1.4->geoalchemy2) (2.0.2)
+[2023-08-30T20:33:46.158+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:33:46.168+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 23.2.1
+[2023-08-30T20:33:46.173+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2023-08-30T20:33:46.549+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T20:33:46.617+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=install_required_packages, execution_date=20230826T000000, start_date=20230830T203319, end_date=20230830T203346
+[2023-08-30T20:33:46.655+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T20:33:46.693+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T20:48:14.577+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:48:14.589+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T20:48:14.607+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T20:48:14.608+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T20:48:14.622+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): install_required_packages> on 2023-08-26 00:00:00+00:00
+[2023-08-30T20:48:14.634+0000] {standard_task_runner.py:57} INFO - Started process 289 to run task
+[2023-08-30T20:48:14.643+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'install_required_packages', 'scheduled__2023-08-26T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmp6dc6v8y3']
+[2023-08-30T20:48:14.656+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask install_required_packages
+[2023-08-30T20:48:14.695+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:48:14.766+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [running]> on host 8f66711a2898
+[2023-08-30T20:48:14.784+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T20:48:14.896+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='install_required_packages' AIRFLOW_CTX_EXECUTION_DATE='2023-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-26T00:00:00+00:00'
+[2023-08-30T20:48:14.899+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T20:48:14.903+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pip install sodapy']
+[2023-08-30T20:48:14.917+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T20:48:16.378+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-08-30T20:48:16.875+0000] {subprocess.py:93} INFO - Requirement already satisfied: sodapy in /home/***/.local/lib/python3.8/site-packages (2.2.0)
+[2023-08-30T20:48:16.878+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.28.1 in /home/***/.local/lib/python3.8/site-packages (from sodapy) (2.31.0)
+[2023-08-30T20:48:16.914+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (1.26.16)
+[2023-08-30T20:48:16.919+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.2.0)
+[2023-08-30T20:48:16.925+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (2023.7.22)
+[2023-08-30T20:48:16.929+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.4)
+[2023-08-30T20:48:20.837+0000] {subprocess.py:93} INFO - 
+[2023-08-30T20:48:20.848+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 23.2.1
+[2023-08-30T20:48:20.850+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2023-08-30T20:48:21.091+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T20:48:21.162+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=install_required_packages, execution_date=20230826T000000, start_date=20230830T204814, end_date=20230830T204821
+[2023-08-30T20:48:21.196+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T20:48:21.231+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T21:07:24.052+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:07:24.063+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T21:07:24.074+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T21:07:24.076+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T21:07:24.091+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): install_required_packages> on 2023-08-26 00:00:00+00:00
+[2023-08-30T21:07:24.097+0000] {standard_task_runner.py:57} INFO - Started process 259 to run task
+[2023-08-30T21:07:24.104+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'install_required_packages', 'scheduled__2023-08-26T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmpfg42rhzn']
+[2023-08-30T21:07:24.109+0000] {standard_task_runner.py:85} INFO - Job 5: Subtask install_required_packages
+[2023-08-30T21:07:24.189+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:07:24.302+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [running]> on host cbc745b7550b
+[2023-08-30T21:07:24.331+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:07:24.471+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='install_required_packages' AIRFLOW_CTX_EXECUTION_DATE='2023-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-26T00:00:00+00:00'
+[2023-08-30T21:07:24.475+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T21:07:24.477+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pip install sodapy']
+[2023-08-30T21:07:24.495+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T21:07:26.665+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-08-30T21:07:27.060+0000] {subprocess.py:93} INFO - Requirement already satisfied: sodapy in /home/***/.local/lib/python3.8/site-packages (2.2.0)
+[2023-08-30T21:07:27.068+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.28.1 in /home/***/.local/lib/python3.8/site-packages (from sodapy) (2.31.0)
+[2023-08-30T21:07:27.073+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.2.0)
+[2023-08-30T21:07:27.076+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.4)
+[2023-08-30T21:07:27.077+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (2023.7.22)
+[2023-08-30T21:07:27.078+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (1.26.16)
+[2023-08-30T21:07:33.229+0000] {subprocess.py:93} INFO - 
+[2023-08-30T21:07:33.232+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 23.2.1
+[2023-08-30T21:07:33.233+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2023-08-30T21:07:33.471+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T21:07:33.511+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=install_required_packages, execution_date=20230826T000000, start_date=20230830T210724, end_date=20230830T210733
+[2023-08-30T21:07:33.571+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T21:07:33.599+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-08-30T21:16:37.082+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:16:37.105+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T21:16:37.119+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [queued]>
+[2023-08-30T21:16:37.121+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-08-30T21:16:37.155+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): install_required_packages> on 2023-08-26 00:00:00+00:00
+[2023-08-30T21:16:37.161+0000] {standard_task_runner.py:57} INFO - Started process 306 to run task
+[2023-08-30T21:16:37.172+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'traffic_report', 'install_required_packages', 'scheduled__2023-08-26T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/traffic_dag.py', '--cfg-path', '/tmp/tmp6vkemavh']
+[2023-08-30T21:16:37.178+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask install_required_packages
+[2023-08-30T21:16:37.207+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:16:37.280+0000] {task_command.py:415} INFO - Running <TaskInstance: traffic_report.install_required_packages scheduled__2023-08-26T00:00:00+00:00 [running]> on host 5b9f14bf20e0
+[2023-08-30T21:16:37.300+0000] {logging_mixin.py:151} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/sqlalchemy.py:124 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2023-08-30T21:16:37.394+0000] {taskinstance.py:1660} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='traffic_report' AIRFLOW_CTX_TASK_ID='install_required_packages' AIRFLOW_CTX_EXECUTION_DATE='2023-08-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-08-26T00:00:00+00:00'
+[2023-08-30T21:16:37.397+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-08-30T21:16:37.399+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'pip install sodapy']
+[2023-08-30T21:16:37.411+0000] {subprocess.py:86} INFO - Output:
+[2023-08-30T21:16:48.063+0000] {subprocess.py:93} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2023-08-30T21:16:49.828+0000] {subprocess.py:93} INFO - Requirement already satisfied: sodapy in /home/***/.local/lib/python3.8/site-packages (2.2.0)
+[2023-08-30T21:16:49.904+0000] {subprocess.py:93} INFO - Requirement already satisfied: requests>=2.28.1 in /home/***/.local/lib/python3.8/site-packages (from sodapy) (2.31.0)
+[2023-08-30T21:16:49.915+0000] {subprocess.py:93} INFO - Requirement already satisfied: certifi>=2017.4.17 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (2023.7.22)
+[2023-08-30T21:16:49.917+0000] {subprocess.py:93} INFO - Requirement already satisfied: charset-normalizer<4,>=2 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.2.0)
+[2023-08-30T21:16:49.923+0000] {subprocess.py:93} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (3.4)
+[2023-08-30T21:16:49.924+0000] {subprocess.py:93} INFO - Requirement already satisfied: urllib3<3,>=1.21.1 in /home/***/.local/lib/python3.8/site-packages (from requests>=2.28.1->sodapy) (1.26.16)
+[2023-08-30T21:16:59.924+0000] {subprocess.py:93} INFO - 
+[2023-08-30T21:16:59.928+0000] {subprocess.py:93} INFO - [notice] A new release of pip is available: 23.0.1 -> 23.2.1
+[2023-08-30T21:16:59.934+0000] {subprocess.py:93} INFO - [notice] To update, run: pip install --upgrade pip
+[2023-08-30T21:17:00.276+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-08-30T21:17:00.382+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=traffic_report, task_id=install_required_packages, execution_date=20230826T000000, start_date=20230830T211637, end_date=20230830T211700
+[2023-08-30T21:17:00.493+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-08-30T21:17:00.549+0000] {taskinstance.py:2784} INFO - 1 downstream tasks scheduled from follow-on schedule check
