@@ -8,7 +8,7 @@ Data Extraction:
 Python will be used to retrieve data from various sources, such as APIs, external databases, or files. The extracted data will be prepared for further processing.
 
 **Data Transformation:**
-Utilizing the power of Python, the extracted data will undergo transformation processes. This could include data cleaning, normalization, aggregation, or any other required manipulations.
+Utilizing the power of Python, the extracted data will undergo transformation processes. This included data cleaning, normalization, and aggregation.
 
 **Data Loading to PostgreSQL:**
 The transformed data will be stored in the PostgreSQL database. SQLAlchemy will be used to create tables, define relationships, and perform database operations.
